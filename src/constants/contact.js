@@ -1,3 +1,4 @@
+// import resume from "../assets/KEYURPATEL_RESUME.pdf";
 const contactInfo = {
   details: [
     {
@@ -22,14 +23,14 @@ const contactInfo = {
       icon: "📧",
       iconColor: "text-yellow-500",
     },
-    {
-      title: "Download Resume",
-      text: "Resume Link",
-      link: "Resume/KEYURPATEL_RESUME.pdf",
-      linkText: "Resume",
-      icon: "📄",
-      iconColor: "text-red-500",
-    },
+    // {
+    //   title: "Download Resume",
+    //   text: "Resume Link",
+    //   link: resume,
+    //   linkText: "Resume",
+    //   icon: "📄",
+    //   iconColor: "text-red-500",
+    // },
   ],
   socialLinks: [
     {

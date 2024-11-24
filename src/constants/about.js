@@ -7,7 +7,7 @@ const aboutContent = {
   personalInfo: [
     { label: "Name", value: "Keyur Patel" },
     { label: "Job Role", value: "Data Analyst" },
-    { label: "Experience", value: "1 Years 11 Months" },
+    { label: "Experience", value: "3+ Years" },
     { label: "Address", value: "Bharuch, Gujarat, India (Currently in Surat)" },
   ],
   additionalInfo: [
@@ -45,11 +45,20 @@ const skills = [
 ];
 
 const profileImage =
-  "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+  "https://res.cloudinary.com/ddzwhzywn/image/upload/v1732431717/hkv6kkxuzspynoq2fks0.png";
 
 const projectsCompleted = 5;
 
 const linkedinUrl =
   "https://www.linkedin.com/in/keyurpatel1761?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRDzQJXKLT7WAA%2BFqW15eKw%3D%3D";
 
-export { aboutContent, skills, profileImage, projectsCompleted, linkedinUrl };
+import resume from "../assets/KEYURPATEL_RESUME.pdf";
+
+export {
+  aboutContent,
+  skills,
+  profileImage,
+  projectsCompleted,
+  linkedinUrl,
+  resume,
+};

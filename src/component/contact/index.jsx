@@ -8,7 +8,7 @@ const Contact = ({ isDarkMode }) => {
 
   return (
     <section
-      className={`py-16 ${background} ${transition.duration}`}
+      className={`pt-20 pb-8 ${background} ${transition.duration}`}
       id="contact-section"
     >
       <div className="container mx-auto px-4">
@@ -25,7 +25,7 @@ const Contact = ({ isDarkMode }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {contactInfo.details.map((info, index) => (
             <div
               key={index}
@@ -61,9 +61,12 @@ const Contact = ({ isDarkMode }) => {
 
         <div className="mt-8 text-center flex justify-center items-center">
           <p className={`${text} mr-4`}>Find me on: </p>
-          <ul className="flex justify-center space-x-6">
+          <ul className="flex justify-center space-x-4">
             {contactInfo.socialLinks.map((link, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className="p-2 bg-blue-600 w-10 h-10 rounded-md flex justify-center items-center"
+              >
                 <a
                   href={link.url}
                   target="_blank"

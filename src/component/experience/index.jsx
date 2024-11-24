@@ -7,14 +7,14 @@ import {
 } from "../../constants";
 
 const Experience = ({ isDarkMode }) => {
-  const { background, text, cardBackground, heading, accent } = isDarkMode
+  const { background, text, cardBackground, heading } = isDarkMode
     ? colors.dark
     : colors.light;
 
   return (
     <section
       id="experience-section"
-      className={`py-20 ${background} ${transition.duration}`}
+      className={`${background} ${transition.duration}`}
     >
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
@@ -54,9 +54,7 @@ const Experience = ({ isDarkMode }) => {
             </div>
           ))}
         </div>
-
-        <br />
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center pt-20">
           <h1
             className={`text-4xl font-bold ${heading} ${transition.duration}`}
           >
@@ -80,16 +78,6 @@ const Experience = ({ isDarkMode }) => {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <a
-            href="Resume/KEYURPATEL_RESUME.pdf"
-            download
-            className={`py-3 px-8 rounded-md text-white ${accent} hover:bg-blue-700 ${transition.duration}`}
-          >
-            Download CV
-          </a>
         </div>
       </div>
     </section>

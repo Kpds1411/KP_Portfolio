@@ -7,6 +7,7 @@ import {
   linkedinUrl,
   colors,
   transition,
+  resume,
 } from "../../constants";
 
 const About = ({ isDarkMode }) => {
@@ -114,9 +115,21 @@ const About = ({ isDarkMode }) => {
                   colors.isDarkMode ? colors.dark.button : colors.light.button
                 } rounded-full hover:bg-blue-700 transition ${
                   transition.duration
-                }`}
+                } mr-4`}
+                target="_blank"
               >
                 LinkedIn
+              </a>
+              <a
+                href={resume}
+                className={`inline-block px-6 py-3 text-lg font-semibold text-white ${
+                  colors.isDarkMode ? colors.dark.button : colors.light.button
+                } rounded-full hover:bg-blue-700 transition ${
+                  transition.duration
+                }`}
+                target="_blank"
+              >
+                Download CV
               </a>
             </div>
           </div>

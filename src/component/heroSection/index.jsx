@@ -14,9 +14,7 @@ const HeroSection = ({ isDarkMode }) => {
   const typingAnimationElement = useRef(null);
   const [typingIndex, setTypingIndex] = useState(0);
 
-  const { background, text, heading, cardBackground } = isDarkMode
-    ? colors.dark
-    : colors.light;
+  const { background, text, heading } = isDarkMode ? colors.dark : colors.light;
 
   useEffect(() => {
     let intervalId;
@@ -59,7 +57,7 @@ const HeroSection = ({ isDarkMode }) => {
       >
         <div className="slider-item w-full h-full relative flex flex-col md:flex-row">
           {/* Left Section: Text Content */}
-          <div className="w-full md:w-2/3 flex flex-col justify-center p-10 md:p-20">
+          <div className="w-full md:w-1/2 flex flex-col justify-center p-10 md:p-20">
             <div className={`${text} transition-all ${transition.duration}`}>
               <span className="subheading text-lg">{greetingMessage}</span>
               <h1
@@ -81,11 +79,11 @@ const HeroSection = ({ isDarkMode }) => {
 
           {/* Right Section: Profile Image */}
           <div
-            className={`w-full md:w-1/3 bg-cover bg-center h-64 md:h-full relative ${cardBackground}`}
+            className={`w-full md:w-1/2 bg-cover bg-center h-64 md:h-full relative`}
             style={{ backgroundImage: `url(${heroProfileImage})` }}
           >
             <div
-              className={`overlay absolute inset-0 ${background} opacity-50 transition-all ${transition.duration}`}
+              className={`overlay absolute inset-0 ${background} opacity-0 transition-all ${transition.duration}`}
             ></div>
           </div>
         </div>

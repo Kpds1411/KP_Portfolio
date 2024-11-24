@@ -14,6 +14,7 @@ import {
   profileImage as aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
+  resume,
 } from "./about";
 
 import { experienceData, educationData } from "./experience";
@@ -68,6 +69,7 @@ export {
   aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
+  resume,
   experienceData,
   educationData,
   contactInfo,
