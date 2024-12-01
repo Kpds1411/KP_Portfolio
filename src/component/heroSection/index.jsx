@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import {
-  currentRole,
   greetingMessage,
   heroProfileImage,
   ownerName,
@@ -56,35 +55,22 @@ const HeroSection = ({ isDarkMode }) => {
         className={`home-slider h-full flex items-center justify-center ${background} transition-all ${transition.duration}`}
       >
         <div className="slider-item w-full h-full relative flex flex-col md:flex-row">
-          {/* Left Section: Text Content */}
           <div className="w-full md:w-1/2 flex flex-col justify-center p-10 md:p-20">
             <div className={`${text} transition-all ${transition.duration}`}>
               <span className="subheading text-lg">{greetingMessage}</span>
               <h1
                 className={`text-4xl md:text-6xl mb-4 mt-3 font-bold ${heading}`}
-              >
-                I&apos;m <span className={`${text}`}>{ownerName}</span>
+              >{ownerName}
               </h1>
               <span
                 ref={typingAnimationElement}
-                className="text-2xl block h-[32px]"
+                className="text-3xl block h-[32px]"
                 aria-label="Typing animation"
               ></span>
-              <br />
-              <h2 className={`text-2xl md:text-3xl mt-4 ${heading}`}>
-                {currentRole}
-              </h2>
             </div>
           </div>
-
-          {/* Right Section: Profile Image */}
-          <div
-            className={`w-full md:w-1/2 bg-cover bg-center h-64 md:h-full relative`}
-            style={{ backgroundImage: `url(${heroProfileImage})` }}
-          >
-            <div
-              className={`overlay absolute inset-0 ${background} opacity-0 transition-all ${transition.duration}`}
-            ></div>
+          <div className="w-full md:w-1/2 h-64 md:h-full relative flex items-center justify-center">
+            <img className="p-14" src={heroProfileImage} alt="" />
           </div>
         </div>
       </div>
