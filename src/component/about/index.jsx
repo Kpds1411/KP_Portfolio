@@ -19,7 +19,7 @@ const About = ({ isDarkMode }) => {
       className={`py-20 ${background} transition-all ${transition.duration}`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap md:flex-nowrap">
+        <div className={`flex flex-wrap md:flex-nowrap p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform`}>
           <div className="w-full md:w-1/2 lg:w-2/5 mb-8 md:mb-0 relative">
             <div
               className={`absolute inset-0 ${cardBackground} opacity-50 transition-all ${transition.duration}`}

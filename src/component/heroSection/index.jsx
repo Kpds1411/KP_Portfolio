@@ -70,8 +70,9 @@ const HeroSection = ({ isDarkMode }) => {
               ></span>
             </div>
           </div>
-          <div className="w-full md:w-1/2 object-fill md:h-full  flex items-center justify-center overflow-hidden">
-            <img className=" md:h-auto md:p-14" src={heroProfileImage} alt="" />
+          {/* w-full md:w-1/2 object-fill md:h-full  flex items-center justify-center overflow-hidden */}
+          <div className="w-full md:w-1/2 h-64 md:h-full relative flex items-center justify-center">
+            <img className="p-14" src={heroProfileImage} alt="" />
           </div>
         </div>
       </div>
