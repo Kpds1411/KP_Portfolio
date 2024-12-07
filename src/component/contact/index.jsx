@@ -71,9 +71,9 @@ const Contact = ({ isDarkMode }) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-xl ${text} hover:${accent}`}
+                  className={`text-xl text-white hover:${accent}`}
                 >
-                  <span style={{color: "white"}} className={link.iconClass}></span>
+                  <span className={link.iconClass}></span>
                 </a>
               </li>
             ))}
@@ -86,24 +86,6 @@ const Contact = ({ isDarkMode }) => {
 
 Contact.propTypes = {
   isDarkMode: PropTypes.bool.isRequired,
-  contactInfo: PropTypes.shape({
-    details: PropTypes.arrayOf(
-      PropTypes.shape({
-        icon: PropTypes.node.isRequired,
-        iconColor: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        text: PropTypes.string,
-        link: PropTypes.string,
-        linkText: PropTypes.string,
-      })
-    ).isRequired,
-    socialLinks: PropTypes.arrayOf(
-      PropTypes.shape({
-        url: PropTypes.string.isRequired,
-        iconClass: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
 };
 
 export default Contact;

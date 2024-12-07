@@ -22,22 +22,20 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
       <ul
         className={`md:flex gap-x-5 ${
           isMobileMenuOpen
-            ? `flex flex-col fixed top-20 right-0 w-full p-8 z-20 transition-all transform duration-300 ease-in-out items-center justify-center bg-${
-                isDarkMode ? "gray-900" : "white"
-              }`
+            ? `flex flex-col fixed top-20 right-0 w-full p-8 z-20 transition-all transform duration-300 ease-in-out items-center justify-center ${background} `
             : "hidden"
         } md:flex md:flex-row md:gap-0 md:items-center`}
       >
         {navOptions.map((option) => (
           <li
             key={option.key}
-            className={`w-full py-3 px-4 text-lg font-semibold ${text} rounded-md transition-all cursor-pointer ${transition.duration} text-center md:px-4 md:w-fit `}
+            className={`w-full py-3 px-4 text-lg font-semibold text rounded-md transition-all cursor-pointer ${transition.duration} text-center md:px-4 md:w-fit`}
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             <a
               href={option.href}
-              className={`${link} ${transition.duration}`}
+              className={`text-white ${transition.duration}`}
               aria-label={option.title}
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               {option.title}
             </a>
@@ -62,16 +60,15 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
       <div className="md:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`text-2xl p-2 border-none cursor-pointer`}
+          className={`text-2xl p-2 border-none cursor-pointer transition-all ${transition.duration}`}
           aria-label="Toggle mobile menu"
-          style={{ color: isDarkMode ? "white" : "" }}
         >
           <i
-            className={`!bg-transparent fas transition-all color-red-600 ${
-              transition.duration
-            } ${isMobileMenuOpen ? "fa-times" : "fa-bars"} ${
-              isDarkMode ? button : buttonHover
-            }`}
+            className={`!bg-transparent fas transition-all ${
+              isDarkMode ? "text-white" : "text-black"
+            } ${transition.duration} ${
+              isMobileMenuOpen ? "fa-times" : "fa-bars"
+            } ${isDarkMode ? button : buttonHover}`}
           ></i>
         </button>
       </div>

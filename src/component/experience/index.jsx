@@ -12,12 +12,35 @@ const Experience = ({ isDarkMode }) => {
     : colors.light;
 
   return (
-    <section
-      id="experience-section"
-      className={`${background} ${transition.duration}`}
-    >
+    <section className={`${background} ${transition.duration}`}>
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
+        <div className="mb-12 text-center">
+          <h1
+            className={`text-4xl font-bold ${heading} ${transition.duration}`}
+          >
+            Education
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {educationData.map((education, index) => (
+            <div
+              key={index}
+              className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
+            >
+              <span className={`text-sm ${text}`}>{education.date}</span>
+              <h2 className="text-2xl font-semibold mt-2">{education.title}</h2>
+              <span className={`font-medium block mt-1 ${text}`}>
+                {education.institution}
+              </span>
+              <p className="mt-4">
+                Grade: <span className="font-semibold">{education.grade}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center my-16" id="experience-section">
           <h1
             className={`text-4xl font-bold ${heading} ${transition.duration}`}
           >
@@ -37,7 +60,7 @@ const Experience = ({ isDarkMode }) => {
               key={index}
               className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
             >
-              <span className="text-sm text-gray-500">{experience.date}</span>
+              <span className={`text-sm ${text}`}>{experience.date}</span>
               <h2 className="text-2xl font-semibold mt-2">
                 {experience.title}
               </h2>
@@ -51,31 +74,6 @@ const Experience = ({ isDarkMode }) => {
                   ))}
                 </ul>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="mb-12 text-center pt-20">
-          <h1
-            className={`text-4xl font-bold ${heading} ${transition.duration}`}
-          >
-            Education
-          </h1>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {educationData.map((education, index) => (
-            <div
-              key={index}
-              className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
-            >
-              <span className="text-sm ${text}">{education.date}</span>
-              <h2 className="text-2xl font-semibold mt-2">{education.title}</h2>
-              <span className={`font-medium block mt-1 ${text}`}>
-                {education.institution}
-              </span>
-              <p className="mt-4">
-                Grade: <span className="font-semibold">{education.grade}</span>
-              </p>
             </div>
           ))}
         </div>

@@ -49,30 +49,32 @@ const HeroSection = ({ isDarkMode }) => {
   return (
     <section
       id="home-section"
-      className={`hero sm:h-screen bg-cover bg-center relative ${background} transition-all ${transition.duration}`}
+      className={`hero h-screen bg-cover bg-center relative ${background} transition-all ${transition.duration}`}
     >
       <div
         className={`home-slider h-full flex items-center justify-center ${background} transition-all ${transition.duration}`}
       >
-        <div className="slider-item w-full h-full relative flex flex-col md:flex-row">
+        <div className="slider-item w-full h-full flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 flex flex-col justify-center p-10 md:p-20">
             <div className={`${text} transition-all ${transition.duration}`}>
-              <span className="subheading text-lg">{greetingMessage}</span>
+              <span className="subheading text-2xl">{greetingMessage}</span>
               <h1
                 className={`text-4xl md:text-6xl mb-4 mt-3 font-bold ${heading}`}
               >
-                {ownerName}
+                <span className={`${text}`}>{ownerName}</span>
               </h1>
               <span
                 ref={typingAnimationElement}
-                className="text-3xl block h-[32px]"
+                className="text-2xl md:text-4xl block h-[32px]"
                 aria-label="Typing animation"
               ></span>
+              <br />
             </div>
           </div>
-          {/* w-full md:w-1/2 object-fill md:h-full  flex items-center justify-center overflow-hidden */}
-          <div className="w-full md:w-1/2 h-64 md:h-full relative flex items-center justify-center">
-            <img className="p-14" src={heroProfileImage} alt="" />
+          <div
+            className={`w-full md:w-1/2 flex justify-center bg-cover bg-center h-64 md:h-full`}
+          >
+            <img src={heroProfileImage} alt="" />
           </div>
         </div>
       </div>

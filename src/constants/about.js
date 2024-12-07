@@ -54,6 +54,19 @@ const linkedinUrl =
 
 import resume from "../assets/KEYURPATEL_RESUME.pdf";
 
+const buttonsData = [
+  {
+    key: "1",
+    buttonText: "LinkedIn",
+    url: linkedinUrl,
+  },
+  {
+    key: "2",
+    buttonText: "Download CV",
+    url: "resume",
+  },
+];
+
 export {
   aboutContent,
   skills,
@@ -61,4 +74,5 @@ export {
   projectsCompleted,
   linkedinUrl,
   resume,
+  buttonsData,
 };

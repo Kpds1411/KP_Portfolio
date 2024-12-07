@@ -7,6 +7,8 @@ import {
   Experience,
   Contact,
   Footer,
+  Achivements,
+  Certifications,
 } from "./component";
 
 export default function App() {
@@ -39,6 +41,8 @@ export default function App() {
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} />
       <Experience isDarkMode={isDarkMode} />
+      <Achivements isDarkMode={isDarkMode} />
+      <Certifications isDarkMode={isDarkMode} />
       <Contact isDarkMode={isDarkMode} />
       <Footer isDarkMode={isDarkMode} />
     </div>

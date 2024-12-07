@@ -21,11 +21,13 @@ import { experienceData, educationData } from "./experience";
 
 import { contactInfo } from "./contact";
 
+import { achivementData } from "./achivement";
+
 const darkColors = {
   background: "bg-gray-900",
   text: "text-white",
   heading: "text-gray-100",
-  link: "text-blue-500",
+  link: "text-blue-600",
   button: "bg-blue-600",
   buttonHover: "hover:bg-blue-700",
   cardBackground: "bg-gray-800",
@@ -75,4 +77,5 @@ export {
   contactInfo,
   colors,
   transition,
+  achivementData,
 };
