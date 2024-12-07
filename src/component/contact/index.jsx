@@ -73,7 +73,10 @@ const Contact = ({ isDarkMode }) => {
                   rel="noopener noreferrer"
                   className={`text-xl ${text} hover:${accent}`}
                 >
-                  <span className={link.iconClass}></span>
+                  <span
+                    style={{ color: "white" }}
+                    className={link.iconClass}
+                  ></span>
                 </a>
               </li>
             ))}

@@ -68,7 +68,7 @@ const Experience = ({ isDarkMode }) => {
               key={index}
               className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
             >
-              <span className="text-sm text-gray-500">{education.date}</span>
+              <span className="text-sm ${text}">{education.date}</span>
               <h2 className="text-2xl font-semibold mt-2">{education.title}</h2>
               <span className={`font-medium block mt-1 ${text}`}>
                 {education.institution}

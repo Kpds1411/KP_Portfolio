@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import {
   aboutContent,
   skills,
-  aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
   colors,
@@ -26,13 +25,13 @@ const About = ({ isDarkMode }) => {
               className={`absolute inset-0 ${cardBackground} opacity-50 transition-all ${transition.duration}`}
             ></div>
             <div className="relative flex flex-col items-center p-6">
-              <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
+              {/* <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
                 <img
                   src={aboutProfileImage}
                   className="w-full h-full object-cover"
                   alt="Profile"
                 />
-              </div>
+              </div> */}
               <div
                 className={`text-center ${text} transition-all ${transition.duration}`}
               >
@@ -78,7 +77,7 @@ const About = ({ isDarkMode }) => {
           >
             <div className="mb-8">
               <h1
-                className={`text-4xl font-bold mb-4 ${heading} ${transition.duration}`}
+                className={`text-4xl text-center font-bold mb-4 ${heading} ${transition.duration}`}
               >
                 About Me
               </h1>
@@ -86,10 +85,10 @@ const About = ({ isDarkMode }) => {
                 {aboutContent.description}
               </p>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-2 px-5">
               {aboutContent.additionalInfo.map((item, index) => (
                 <li
-                  className={`flex gap-2 text-lg ${text} ${transition.duration}`}
+                  className={`list-disc gap-2 text-lg ${text} ${transition.duration}`}
                   key={index}
                 >
                   <span className="font-semibold min-w-fit">
