@@ -8,7 +8,7 @@ const Achivements = ({ isDarkMode }) => {
 
   return (
     <section
-      className={`pt-16 ${background} ${transition.duration}`}
+      className={`pt-20 ${background} ${transition.duration}`}
       id="achivements-section"
     >
       <div className="container mx-auto px-4">
