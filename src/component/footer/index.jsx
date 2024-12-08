@@ -11,10 +11,7 @@ const Footer = ({ isDarkMode }) => {
           <p className={`${text}`}>
             &copy; {new Date().getFullYear()} All rights reserved.
             <br />
-            <span className={`${accent}`}>· Created by: Keyur Patel ·</span>
-          </p>
-          <p className="text-xs text-gray-500 mt-2">
-            Template licensed under CC BY 3.0
+            <span className={`${accent}`}>Created by: Keyur Patel</span>
           </p>
         </div>
       </div>
