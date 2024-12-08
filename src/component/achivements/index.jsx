@@ -22,11 +22,11 @@ const Achivements = ({ isDarkMode }) => {
             <h1
               className={`text-4xl font-bold ${heading} ${transition.duration}`}
             >
-              Achivements
+              Achievements
             </h1>
-            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
+            {/* <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
               Below are the details to reach out to me! Achivements
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

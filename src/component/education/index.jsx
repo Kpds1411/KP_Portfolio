@@ -16,9 +16,9 @@ const Education = ({ isDarkMode }) => {
             >
               Education
             </h1>
-            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
+            {/* <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
               Below are the details to reach out to me! Education
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

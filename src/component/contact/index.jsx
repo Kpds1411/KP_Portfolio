@@ -8,7 +8,7 @@ const Contact = ({ isDarkMode }) => {
 
   return (
     <section
-      className={`pt-20 ${background} ${transition.duration}`}
+      className={`pt-20 pb-8 ${background} ${transition.duration}`}
       id="contact-section"
     >
       <div className="container mx-auto px-4">
@@ -19,9 +19,9 @@ const Contact = ({ isDarkMode }) => {
             >
               Contact
             </h1>
-            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
+            {/* <p className={`text-lg ${text} ${transition.duration}`}>
               Below are the details to reach out to me!
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -71,9 +71,9 @@ const Contact = ({ isDarkMode }) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-xl text-white hover:${accent}`}
+                  className={`text-xl ${text} hover:${accent}`}
                 >
-                  <span className={link.iconClass}></span>
+                  <span style={{color: "white"}} className={link.iconClass}></span>
                 </a>
               </li>
             ))}

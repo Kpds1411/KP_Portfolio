@@ -24,9 +24,9 @@ export const Certifications = ({ isDarkMode }) => {
             >
               Certifications
             </h1>
-            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
+            {/* <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
               Below are the details to reach out to me! Certifications
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-10">

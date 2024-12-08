@@ -2,17 +2,23 @@ import PropTypes from "prop-types";
 import { colors, transition } from "../../constants";
 
 const Footer = ({ isDarkMode }) => {
-  const { background, text, accent } = isDarkMode ? colors.dark : colors.light;
+  const { background, text, accent,link } = isDarkMode ? colors.dark : colors.light;
 
   return (
     <footer className={`pt-14 pb-6 ${background} ${transition.duration}`}>
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <p className={`${text}`}>
+          <div className={`${text}`}>
             &copy; {new Date().getFullYear()} All rights reserved.
             <br />
-            <span className={`${accent}`}>Created by: Keyur Patel</span>
-          </p>
+            <div className={`${accent} flex justify-center items-center`}>Created by:              <a
+              href={'https://www.linkedin.com/in/aakash-prajapati-020791302'}
+              className={`${link} hover:underline`}
+              target="_blank"
+            >
+             &nbsp;Aakash Prajapati
+            </a></div>
+          </div>
         </div>
       </div>
     </footer>

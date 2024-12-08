@@ -19,10 +19,10 @@ const Experience = ({ isDarkMode }) => {
             >
               Experience
             </h1>
-            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
+            {/* <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
               Highlighting key roles in my career and how I’ve helped businesses
               grow through impactful work.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
