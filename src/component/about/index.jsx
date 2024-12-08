@@ -82,7 +82,7 @@ const About = ({ isDarkMode }) => {
                 {aboutContent.description}
               </p>
             </div>
-            <ul className="space-y-3 list-disc px-5">
+            <ul className="space-y-1 md:space-y-3 list-disc px-5">
               {aboutContent.additionalInfo.map((item, index) => (
                 <li
                   className={`text-lg ${text} ${transition.duration}`}
