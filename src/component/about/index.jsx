@@ -16,7 +16,7 @@ const About = ({ isDarkMode }) => {
   return (
     <section
       id="about-section"
-      className={`py-20 ${background} transition-all ${transition.duration}`}
+      className={`pt-20 ${background} transition-all ${transition.duration}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-nowrap">
@@ -70,7 +70,7 @@ const About = ({ isDarkMode }) => {
           </div>
 
           <div
-            className={`w-full md:w-1/2 lg:w-3/5 pl-4 md:pl-8 ${text} ${transition.duration}`}
+            className={`w-full pt-16 md:pt-0 md:w-1/2 lg:w-3/5 pl-4 md:pl-8 ${text} ${transition.duration}`}
           >
             <div className="mb-8">
               <h1

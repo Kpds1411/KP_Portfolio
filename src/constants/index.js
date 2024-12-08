@@ -23,6 +23,8 @@ import { contactInfo } from "./contact";
 
 import { achivementData } from "./achivement";
 
+import { certificationsData } from "./certifications";
+
 const darkColors = {
   background: "bg-gray-900",
   text: "text-white",
@@ -78,4 +80,5 @@ export {
   colors,
   transition,
   achivementData,
+  certificationsData,
 };

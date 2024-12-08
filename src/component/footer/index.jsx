@@ -5,11 +5,10 @@ const Footer = ({ isDarkMode }) => {
   const { background, text, accent } = isDarkMode ? colors.dark : colors.light;
 
   return (
-    <footer className={`py-6 ${background} ${transition.duration}`}>
+    <footer className={`pt-14 pb-6 ${background} ${transition.duration}`}>
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className={`${text}`}>
-            {/* Copyright notice */}
             &copy; {new Date().getFullYear()} All rights reserved.
             <br />
             <span className={`${accent}`}>· Created by: Keyur Patel ·</span>

@@ -6,6 +6,7 @@ import Experience from "./experience";
 import Contact from "./contact";
 import Achivements from "./achivements";
 import Certifications from "./certifications";
+import Education from "./education";
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   Contact,
   Achivements,
   Certifications,
+  Education,
 };

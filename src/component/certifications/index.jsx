@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { colors, transition } from "../../constants";
-import { certificationsData } from "../../constants/certifications";
+import { colors, transition, certificationsData } from "../../constants";
 export const Certifications = ({ isDarkMode }) => {
   const { background, text, cardBackground, heading } = isDarkMode
     ? colors.dark
@@ -8,7 +7,7 @@ export const Certifications = ({ isDarkMode }) => {
 
   return (
     <section
-      className={`pt-20 pb-8 ${background} ${transition.duration}`}
+      className={`pt-16 ${background} ${transition.duration}`}
       id="certifications-section"
     >
       <div className="container mx-auto px-4">
@@ -19,7 +18,7 @@ export const Certifications = ({ isDarkMode }) => {
             >
               Certifications
             </h1>
-            <p className={`text-lg ${text} ${transition.duration}`}>
+            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
               Below are the details to reach out to me! Certifications
             </p>
           </div>

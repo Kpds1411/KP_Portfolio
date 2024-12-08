@@ -34,7 +34,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           >
             <a
               href={option.href}
-              className={`text-white ${transition.duration}`}
+              className={`${link} ${transition.duration}`}
               aria-label={option.title}
             >
               {option.title}

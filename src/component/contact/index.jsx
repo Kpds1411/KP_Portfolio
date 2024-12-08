@@ -8,7 +8,7 @@ const Contact = ({ isDarkMode }) => {
 
   return (
     <section
-      className={`pt-20 pb-8 ${background} ${transition.duration}`}
+      className={`pt-20 ${background} ${transition.duration}`}
       id="contact-section"
     >
       <div className="container mx-auto px-4">
@@ -19,7 +19,7 @@ const Contact = ({ isDarkMode }) => {
             >
               Contact
             </h1>
-            <p className={`text-lg ${text} ${transition.duration}`}>
+            <p className={`text-lg mt-2.5 ${text} ${transition.duration}`}>
               Below are the details to reach out to me!
             </p>
           </div>
