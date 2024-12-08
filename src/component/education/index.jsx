@@ -7,10 +7,7 @@ const Education = ({ isDarkMode }) => {
     : colors.light;
 
   return (
-    <section
-      className={`pt-16 ${background} ${transition.duration}`}
-      id="certifications-section"
-    >
+    <section className={`pt-16 ${background} ${transition.duration}`}>
       <div className="container mx-auto px-4">
         <div className="row justify-center mb-8">
           <div className="col-md-7 text-center">
