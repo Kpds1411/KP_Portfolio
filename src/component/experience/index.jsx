@@ -29,7 +29,7 @@ const Experience = ({ isDarkMode }) => {
           {experienceData.map((experience, index) => (
             <div
               key={index}
-              className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
+              className={`p-8 rounded-xl h-fit shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
             >
               <span className={`text-sm ${text}`}>{experience.date}</span>
               <h2 className="text-2xl font-semibold mt-2">
