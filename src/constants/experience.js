@@ -4,8 +4,9 @@ const experienceData = [
     title: "Data Analyst",
     company: "Inkey IT Solutions Pvt. Ltd. (Full-time)",
     description: [
-      "Analysed ad campaigns, clickstream, and customer surveys data, identified an increasing demand and launched a strategic product line.",
-      "Developed time series forecasting models to predict sales and optimize marketing budgets, achieving model performance of 92%.",
+      "Developed a Power BI report for a US-based healthcare client by extracting data from MySQL and PostgreSQL databases. The report supports Row-Level Security (RLS) and is embedded into the client’s portal for seamless data visualization and secure access.",
+      "Power BI Development: Developed a Power BI report summarizing email migration for an Australia-based investment client by extracting email data and attachments from the CRM. The report provides a comprehensive overview of migrated emails, including detailed information and associated attachments.",
+      "ETL Development: Designed and implemented an Azure Data Factory (ADF) pipeline for email migration for an Australia-based investment client. The pipeline extracts email data and attachments from the CRM, offering dynamic functionality that allows users to specify date ranges and target entities for data migration.",
       "Designed and executed A/B tests, performed rigorous statistical analysis, leading to a 20% MoM increase in the conversion rate.",
     ],
   },
