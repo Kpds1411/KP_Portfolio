@@ -99,7 +99,7 @@ const About = ({ isDarkMode }) => {
               <h1
                 className={`text-4xl text-center font-bold mb-4 ${heading} ${transition.duration}`}
               >
-                About Me
+                About
               </h1>
               <p className={`text-lg ${text} ${transition.duration}`}>
                 {aboutContent.description}
@@ -126,7 +126,7 @@ const About = ({ isDarkMode }) => {
                 </span>
                 + Projects completed
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-0">
+              <div className="flex flex-wrap justify-center items-center !gap-5 sm:gap-0">
                 {buttonsData.map((res) => (
                   <a
                     key={res.key}
@@ -139,6 +139,7 @@ const About = ({ isDarkMode }) => {
                       transition.duration
                     }`}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {res.buttonText}
                   </a>

@@ -14,7 +14,8 @@ const aboutContent = {
     { label: "Profile", value: "Data Analytics & Data Science" },
     {
       label: "Domain",
-      value: "Retail, Ecommerce, Trading, Logistics, Finance, Automobile",
+      value:
+        "Retail, E-Commerce, Trading, Logistics, Finance, Automobile, Health Care, Oil & Gas",
     },
     { label: "Education", value: "Bachelor of Engineering" },
     { label: "Language", value: "English, Hindi, Gujarati" },
@@ -47,23 +48,25 @@ const skills = [
 const profileImage =
   "https://res.cloudinary.com/ddzwhzywn/image/upload/v1732431717/hkv6kkxuzspynoq2fks0.png";
 
-const projectsCompleted = 5;
+const projectsCompleted = 8;
 
 const linkedinUrl =
   "https://www.linkedin.com/in/keyurpatel1761?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRDzQJXKLT7WAA%2BFqW15eKw%3D%3D";
 
-import resume from "../assets/KEYURPATEL_RESUME.pdf";
+import resume from "../assets/Keyur Patel Latest Resume.pdf";
 
 const buttonsData = [
   {
     key: "1",
     buttonText: "LinkedIn",
     url: linkedinUrl,
+    download: false,
   },
   {
     key: "2",
     buttonText: "Download CV",
-    url: "resume",
+    url: resume,
+    download: true,
   },
 ];
 
