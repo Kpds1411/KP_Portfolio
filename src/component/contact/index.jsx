@@ -162,7 +162,7 @@ const Contact = ({ isDarkMode }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`px-6 py-3 text-lg font-semibold text-white ${button} ${buttonHover} rounded-full transition ${transition.duration} flex justify-center items-center gap-2 disabled:opacity-60`}
+                className={`px-10 py-3 text-lg font-semibold text-white ${button} ${buttonHover} rounded-lg transition ${transition.duration} flex justify-center items-center gap-2 disabled:opacity-60`}
               >
                 {isSubmitting ? (
                   <>
