@@ -13,26 +13,26 @@ import { buttonsData } from "../../constants/about";
 const About = ({ isDarkMode }) => {
   const { background, text, heading, cardBackground, skillProgressColor } =
     isDarkMode ? colors.dark : colors.light;
-    const skillRefs = useRef([]);
+  const skillRefs = useRef([]);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.width = entry.target.getAttribute("data-level");
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-  
-      skillRefs.current.forEach((ref) => {
-        if (ref) observer.observe(ref);
-      });
-  
-      return () => observer.disconnect();
-    }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.getAttribute("data-level");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    skillRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -68,23 +68,27 @@ const About = ({ isDarkMode }) => {
                 Skills:
               </h4>
               {skills.map((skill, index) => (
-        <div key={index} className="mb-4">
-          <div className="flex justify-between">
-            <span className={`${text} ${transition.duration}`}>{skill.name}</span>
-            <span className={`${text} ${transition.duration}`}>{skill.level}</span>
-          </div>
-          <div className="w-full h-2 bg-gray-300 rounded-full">
-            <div
-              ref={(el) => (skillRefs.current[index] = el)}
-              className={`h-full rounded-full ${skillProgressColor} transition-all duration-1000`}
-              data-level={skill.level}
-              style={{
-                width: "0%",
-              }}
-            ></div>
-          </div>
-        </div>
-      ))}
+                <div key={index} className="mb-4">
+                  <div className="flex justify-between">
+                    <span className={`${text} ${transition.duration}`}>
+                      {skill.name}
+                    </span>
+                    <span className={`${text} ${transition.duration}`}>
+                      {skill.level}
+                    </span>
+                  </div>
+                  <div className="w-full h-2 bg-gray-300 rounded-full">
+                    <div
+                      ref={(el) => (skillRefs.current[index] = el)}
+                      className={`h-full rounded-full ${skillProgressColor} transition-all duration-1000`}
+                      data-level={skill.level}
+                      style={{
+                        width: "0%",
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -133,7 +137,7 @@ const About = ({ isDarkMode }) => {
                         : colors.light.button
                     } rounded-full hover:bg-blue-700 transition ${
                       transition.duration
-                    } mr-4`}
+                    }`}
                     target="_blank"
                   >
                     {res.buttonText}
