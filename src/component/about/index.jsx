@@ -124,18 +124,18 @@ const About = ({ isDarkMode }) => {
                 >
                   {projectsCompleted}
                 </span>
-                + Projects completed
+                + Projects Completed
               </p>
               <div className="flex flex-wrap justify-center items-center !gap-5 sm:gap-0">
                 {buttonsData.map((res) => (
                   <a
                     key={res.key}
                     href={res.url}
-                    className={`inline-block px-6 py-3 text-lg font-semibold text-white ${
+                    className={`inline-block px-6 py-3 text-lg font-semibold text-white  ${
                       colors.isDarkMode
                         ? colors.dark.button
                         : colors.light.button
-                    } rounded-full hover:bg-blue-700 transition ${
+                    } rounded-lg hover:bg-blue-700 transition ${
                       transition.duration
                     }`}
                     target="_blank"
