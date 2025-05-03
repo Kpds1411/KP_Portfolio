@@ -49,7 +49,7 @@ const HeroSection = ({ isDarkMode }) => {
   return (
     <section
       id="home-section"
-      className={`hero h-screen bg-cover bg-center relative ${background} transition-all ${transition.duration}`}
+      className={`hero bg-cover bg-center relative ${background} transition-all ${transition.duration}`}
     >
       <div
         className={`home-slider h-full flex items-center justify-center ${background} transition-all ${transition.duration}`}
@@ -72,9 +72,13 @@ const HeroSection = ({ isDarkMode }) => {
             </div>
           </div>
           <div
-            className={`w-full md:w-1/2 flex justify-center bg-cover bg-center h-64 md:h-full`}
+            className={`w-full md:w-1/2 md:mt-10 flex justify-center bg-cover bg-center h-80 md:h-full`}
           >
-            <img src={heroProfileImage} alt="" />
+            <img
+              src={heroProfileImage}
+              alt="Hero"
+              className="object-contain max-w-full h-auto"
+            />
           </div>
         </div>
       </div>

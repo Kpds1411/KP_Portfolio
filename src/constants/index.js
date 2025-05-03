@@ -35,6 +35,7 @@ const darkColors = {
   cardBackground: "bg-gray-800",
   cardText: "text-white",
   skillProgressColor: "bg-green-500",
+  inputBorder: "border-gray-100",
 };
 
 const lightColors = {
@@ -47,6 +48,7 @@ const lightColors = {
   cardBackground: "bg-white",
   cardText: "text-gray-800",
   skillProgressColor: "bg-yellow-500",
+  inputBorder: "border-black",
 };
 
 const transitionDuration = "duration-300";
