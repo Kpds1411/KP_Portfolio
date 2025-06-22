@@ -29,11 +29,11 @@ export const Certifications = ({ isDarkMode }) => {
             </p> */}
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10  ">
           {certificationsData.map((certificate, index) => (
             <div
               key={certificate.key}
-              className={`w-[604px] p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
+              className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
             >
               <img
                 onClick={() => {
