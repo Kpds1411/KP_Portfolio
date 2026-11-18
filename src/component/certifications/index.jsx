@@ -44,9 +44,9 @@ export const Certifications = ({ isDarkMode }) => {
                 }}
                 src={certificate.imageUrl}
                 alt={certificate.title}
-                // Same frame shape for every certificate so images (and the
-                // text below) line up across a row; full image shows in the modal
-                className="rounded-lg cursor-pointer w-full aspect-[1.8] object-cover object-center"
+                // Full, uncropped image; the card (h-full) stretches so both
+                // cards in a row have the same overall height
+                className="rounded-lg cursor-pointer w-full h-auto"
               />
               <p className="mt-5">{certificate.text}</p>
             </div>
