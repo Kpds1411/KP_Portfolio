@@ -23,7 +23,11 @@ import { contactInfo } from "./contact";
 
 import { achivementData } from "./achivement";
 
-import { certificationsData } from "./certifications";
+import { certificationsData, heroBadges, heroTools } from "./certifications";
+
+import { projectsData } from "./projects";
+
+import { publicationsData } from "./publications";
 
 const darkColors = {
   background: "bg-gray-900",
@@ -83,4 +87,8 @@ export {
   transition,
   achivementData,
   certificationsData,
+  heroBadges,
+  heroTools,
+  projectsData,
+  publicationsData,
 };

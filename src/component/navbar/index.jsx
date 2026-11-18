@@ -20,16 +20,16 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
       </div>
 
       <ul
-        className={`md:flex gap-x-5 ${
+        className={`lg:flex gap-x-5 ${
           isMobileMenuOpen
             ? `flex flex-col fixed top-20 right-0 w-full p-8 z-20 transition-all transform duration-300 ease-in-out items-center justify-center ${background} `
             : "hidden"
-        } md:flex md:flex-row md:gap-0 md:items-center`}
+        } lg:flex lg:flex-row lg:gap-0 lg:items-center`}
       >
         {navOptions.map((option) => (
           <li
             key={option.key}
-            className={`w-full py-3 px-4 text-lg font-semibold text rounded-md transition-all cursor-pointer ${transition.duration} text-center md:px-4 md:w-fit`}
+            className={`w-full py-3 px-4 text-lg lg:text-base xl:text-lg font-semibold text rounded-md transition-all cursor-pointer ${transition.duration} text-center lg:px-2 xl:px-3 lg:w-fit`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <a
@@ -57,7 +57,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         ></i>
       </button>
 
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`text-2xl p-2 border-none cursor-pointer transition-all ${transition.duration}`}

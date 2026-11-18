@@ -10,6 +10,8 @@ import {
   Achivements,
   Certifications,
   Education,
+  // Projects, // hidden for now
+  Publications,
 } from "./component";
 
 export default function App() {
@@ -41,10 +43,13 @@ export default function App() {
       <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} />
-      <Education isDarkMode={isDarkMode} />
       <Experience isDarkMode={isDarkMode} />
-      <Achivements isDarkMode={isDarkMode} />
+      {/* Projects hidden for now — uncomment to re-enable (also in header.js) */}
+      {/* <Projects isDarkMode={isDarkMode} /> */}
       <Certifications isDarkMode={isDarkMode} />
+      <Achivements isDarkMode={isDarkMode} />
+      <Publications isDarkMode={isDarkMode} />
+      <Education isDarkMode={isDarkMode} />
       <Contact isDarkMode={isDarkMode} />
       <Footer isDarkMode={isDarkMode} />
     </div>

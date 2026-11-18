@@ -33,7 +33,7 @@ export const Certifications = ({ isDarkMode }) => {
           {certificationsData.map((certificate, index) => (
             <div
               key={certificate.key}
-              className={`p-8 rounded-xl shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
+              className={`p-8 rounded-xl h-full flex flex-col shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
             >
               <img
                 onClick={() => {
@@ -43,8 +43,10 @@ export const Certifications = ({ isDarkMode }) => {
                   setOriginalLink(certificate.originalLink);
                 }}
                 src={certificate.imageUrl}
-                alt=""
-                className="rounded-lg cursor-pointer"
+                alt={certificate.title}
+                // Full, uncropped image; the card (h-full) stretches so both
+                // cards in a row have the same overall height
+                className="rounded-lg cursor-pointer w-full h-auto"
               />
               <p className="mt-5">{certificate.text}</p>
             </div>

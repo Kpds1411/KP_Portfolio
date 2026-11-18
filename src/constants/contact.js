@@ -17,9 +17,9 @@ const contactInfo = {
     },
     {
       title: "Email Address",
-      text: "kpds7214@gmail.com",
-      link: "mailto:kpds7214@gmail.com",
-      linkText: "kpds7214@gmail.com",
+      text: "patelkeyur1761@gmail.com",
+      link: "mailto:patelkeyur1761@gmail.com",
+      linkText: "patelkeyur1761@gmail.com",
       icon: "📧",
       iconColor: "text-yellow-500",
     },

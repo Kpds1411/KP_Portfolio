@@ -7,6 +7,8 @@ import Contact from "./contact";
 import Achivements from "./achivements";
 import Certifications from "./certifications";
 import Education from "./education";
+import Projects from "./projects";
+import Publications from "./publications";
 
 export {
   Navbar,
@@ -18,4 +20,6 @@ export {
   Achivements,
   Certifications,
   Education,
+  Projects,
+  Publications,
 };
