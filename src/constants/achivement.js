@@ -1,3 +1,5 @@
+import smartThinkingAwardImage from "../assets/award-smart-thinking.jpeg";
+
 const achivementData = [
   {
     key: "1",
@@ -12,6 +14,12 @@ const achivementData = [
     imageUrl:
       "https://res.cloudinary.com/ddzwhzywn/image/upload/v1733544736/umhmlczbg4e7loogxkma.jpg",
     text: "Got this award for showcasing outstanding performance, dedication, and contribution within a specific period and demonstrating exceptional skills, leadership, and commitment, setting a shining example for their peers.",
+  },
+  {
+    key: "3",
+    title: "Smart Thinking (Solution) Award",
+    imageUrl: smartThinkingAwardImage,
+    text: "Got the Smart Thinking (Solution) Award for identifying opportunities to improve processes and developing a structured prompt list that streamlined demo creation, improved completeness, and enhanced overall efficiency through practical problem-solving.",
   },
 ];
 

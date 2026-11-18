@@ -7,18 +7,34 @@ const Modal = ({ isOpen, onClose, title, children, isDarkMode }) => {
   const modalRef = useRef(null);
   const { background, text } = isDarkMode ? colors.dark : colors.light;
 
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      onClose();
-    }
-  };
+  // Keep the latest onClose without re-running the effect on every render
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
   useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+    if (!isOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onCloseRef.current();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Lock background scrolling while the modal is open. Pad by the scrollbar
+    // width so the page doesn't jump sideways when the scrollbar disappears.
+    const { overflow, paddingRight } = document.body.style;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = paddingRight;
     };
   }, [isOpen]);
 
@@ -30,10 +46,10 @@ const Modal = ({ isOpen, onClose, title, children, isDarkMode }) => {
     >
       <div
         ref={modalRef}
-        className={`${background} rounded-lg shadow-lg max-w-2xl w-full`}
+        className={`${background} rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] flex flex-col`}
       >
         <div
-          className={`${text} flex justify-between items-center border-b px-2.5 py-1.5 md:px-4 md:py-2.5`}
+          className={`${text} flex justify-between items-center border-b px-2.5 py-1.5 md:px-4 md:py-2.5 shrink-0`}
         >
           {title ? (
             <h2 className="text-lg md:text-3xl font-semibold">{title}</h2>
@@ -49,7 +65,10 @@ const Modal = ({ isOpen, onClose, title, children, isDarkMode }) => {
           </button>
         </div>
 
-        <div className="p-2 md:p-4">{children}</div>
+        {/* Images inside are capped so tall (portrait) photos fit on screen */}
+        <div className="p-2 md:p-4 overflow-y-auto overscroll-contain min-h-0 [&_img]:max-h-[70vh] [&_img]:w-auto [&_img]:mx-auto [&_img]:object-contain">
+          {children}
+        </div>
       </div>
     </div>,
     document.body

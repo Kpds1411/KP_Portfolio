@@ -7,16 +7,23 @@ import {
   typoGraphyContent,
   colors,
   transition,
+  heroBadges,
+  heroTools,
 } from "../../constants";
 
 const HeroSection = ({ isDarkMode }) => {
   const typingAnimationElement = useRef(null);
-  const [typingIndex, setTypingIndex] = useState(0);
+  // Always-incrementing cycle counter. Using `(prev + 1) % length` directly
+  // breaks when there is only one phrase: it stays 0, React skips the update,
+  // and the animation never replays.
+  const [typingCycle, setTypingCycle] = useState(0);
+  const typingIndex = typingCycle % typoGraphyContent.length;
 
   const { background, text, heading } = isDarkMode ? colors.dark : colors.light;
 
   useEffect(() => {
     let intervalId;
+    let timeoutId;
     const playTypingAnimation = (text) => {
       let charIndex = 0;
       intervalId = setInterval(() => {
@@ -26,11 +33,11 @@ const HeroSection = ({ isDarkMode }) => {
         charIndex++;
         if (charIndex === text.length) {
           clearInterval(intervalId);
-          setTimeout(() => {
+          timeoutId = setTimeout(() => {
             if (typingAnimationElement.current) {
               typingAnimationElement.current.textContent = "";
             }
-            setTypingIndex((prev) => (prev + 1) % typoGraphyContent.length);
+            setTypingCycle((prev) => prev + 1);
           }, 1000);
         }
       }, 200);
@@ -43,8 +50,9 @@ const HeroSection = ({ isDarkMode }) => {
 
     return () => {
       clearInterval(intervalId);
+      clearTimeout(timeoutId);
     };
-  }, [typingIndex]);
+  }, [typingCycle, typingIndex]);
 
   return (
     <section
@@ -65,10 +73,32 @@ const HeroSection = ({ isDarkMode }) => {
               </h1>
               <span
                 ref={typingAnimationElement}
-                className="text-2xl md:text-4xl block h-[32px]"
+                className="text-2xl md:text-4xl block min-h-[32px] md:min-h-[40px]"
                 aria-label="Typing animation"
               ></span>
-              <br />
+              <div className="grid grid-cols-4 gap-3 md:gap-4 mt-6 max-w-md">
+                {heroBadges.map((badge) => (
+                  <img
+                    key={badge.key}
+                    src={badge.image}
+                    alt={badge.title}
+                    title={badge.title}
+                    className="w-full aspect-square object-contain rounded-lg"
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-2 md:gap-3 mt-6 max-w-xl bg-white rounded-lg px-3 py-2 shadow-sm">
+                {heroTools.map((tool) => (
+                  <img
+                    key={tool.key}
+                    src={tool.image}
+                    alt={tool.title}
+                    title={tool.title}
+                    style={{ flex: `${tool.ratio} 1 0%` }}
+                    className="min-w-0 h-auto object-contain"
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <div
@@ -76,8 +106,11 @@ const HeroSection = ({ isDarkMode }) => {
           >
             <img
               src={heroProfileImage}
-              alt="Hero"
-              className="object-contain max-w-full h-auto"
+              alt="Keyur Patel"
+              // White outline traced around the transparent cutout plus a
+              // soft shadow so the photo stands out. No downward outline/shadow:
+              // the photo is cut flat at the bottom, so it would draw a line there.
+              className="object-contain w-[55%] max-w-[440px] h-auto self-center [filter:drop-shadow(3px_0_0_#fff)_drop-shadow(-3px_0_0_#fff)_drop-shadow(0_-3px_0_#fff)_drop-shadow(0_-4px_12px_rgba(0,0,0,0.2))]"
             />
           </div>
         </div>

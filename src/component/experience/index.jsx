@@ -25,11 +25,13 @@ const Experience = ({ isDarkMode }) => {
             </p> */}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {experienceData.map((experience, index) => (
             <div
               key={index}
-              className={`p-8 rounded-xl h-fit shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
+              // No h-fit: grid items stretch, so every card in a row matches
+              // the tallest one
+              className={`p-8 rounded-xl h-full flex flex-col shadow-md hover:shadow-2xl ${cardBackground} ${text} ${transition.duration} transform hover:scale-105`}
             >
               <span className={`text-sm ${text}`}>{experience.date}</span>
               <h2 className="text-2xl font-semibold mt-2">
@@ -38,13 +40,6 @@ const Experience = ({ isDarkMode }) => {
               <span className={`font-medium block mt-1 ${text}`}>
                 {experience.company}
               </span>
-              <div className="mt-4">
-                <ul className="list-disc pl-6 space-y-2">
-                  {experience.description.map((desc, idx) => (
-                    <li key={idx}>{desc}</li>
-                  ))}
-                </ul>
-              </div>
             </div>
           ))}
         </div>

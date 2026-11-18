@@ -44,10 +44,10 @@ const About = ({ isDarkMode }) => {
           <div
             className={`relative flex flex-col items-center p-6 rounded shadow-md hover:shadow-2xl ${cardBackground}`}
           >
-            <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
+            <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-white bg-gray-100 shadow-lg ring-1 ring-gray-200">
               <img
                 src={aboutProfileImage}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
                 alt="Profile"
               />
             </div>
