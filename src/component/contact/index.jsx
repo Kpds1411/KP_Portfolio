@@ -4,6 +4,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { contactInfo, colors, transition } from "../../constants";
 
+// "Let's Connect & Build" form is hidden for now; set to true to re-enable
+const SHOW_CONTACT_FORM = false;
+
 const Contact = ({ isDarkMode }) => {
   const {
     background,
@@ -120,6 +123,7 @@ const Contact = ({ isDarkMode }) => {
         </div>
 
         {/* Contact Form */}
+        {SHOW_CONTACT_FORM && (
         <div
           className={`max-w-2xl mx-auto p-6 rounded-lg shadow-md ${cardBackground} ${text}`}
         >
@@ -195,6 +199,7 @@ const Contact = ({ isDarkMode }) => {
             </div>
           </form>
         </div>
+        )}
 
         <div className="mt-12 flex justify-center items-center">
           <p className={`${text} mr-4`}>Find me on:</p>
