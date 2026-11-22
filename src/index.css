@@ -1,3 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --portfolio-paper: #fcfaf6;
+  --portfolio-ink: #202c27;
+  --portfolio-muted: #506059;
+  --portfolio-accent: #22634e;
+  --portfolio-line: #dbe4da;
+  --portfolio-shadow: 0 12px 32px rgba(32, 44, 39, 0.06);
+}
+
+body {
+  background: var(--portfolio-paper);
+  color: var(--portfolio-ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+#root :is(h1, h2, h3) {
+  color: var(--portfolio-ink);
+  font-family: "Manrope", system-ui, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+#root nav[aria-label="Main navigation"] {
+  height: 4.5rem;
+  border-bottom: 1px solid var(--portfolio-line);
+  background: var(--portfolio-paper);
+}
+
+#portfolio-nav-links {
+  top: 4.5rem;
+  background: var(--portfolio-paper);
+  max-height: calc(100dvh - 4.5rem);
+  overflow-y: auto;
+}
+
+#portfolio-nav-links a {
+  display: block;
+  border-bottom: 2px solid transparent;
+  padding: 0.4rem 0.7rem;
+  color: var(--portfolio-muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+#portfolio-nav-links a:hover,
+#portfolio-nav-links a[aria-current="location"] {
+  color: var(--portfolio-accent);
+}
+
+#portfolio-nav-links a[aria-current="location"] {
+  border-bottom-color: var(--portfolio-accent);
+}
+
+#root nav button[aria-controls="portfolio-nav-links"] {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  color: var(--portfolio-ink);
+  background: transparent;
+}
+
+#root section a.text-blue-600 {
+  color: var(--portfolio-accent);
+}
+
+@media (min-width: 1280px) {
+  #portfolio-nav-links {
+    gap: clamp(0.8rem, 1.6vw, 1.75rem);
+    background: transparent;
+  }
+
+  #portfolio-nav-links > li {
+    width: auto;
+    padding: 0;
+  }
+
+  #portfolio-nav-links a {
+    white-space: nowrap;
+  }
+}
+
+#root :is(a, button, input, textarea):focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 4px;
+}
+
+#root section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+#root section[id] + section[id] {
+  position: relative;
+}
+
+#root section[id] + section[id]::before {
+  position: absolute;
+  inset: 0 clamp(1.25rem, 5vw, 4rem) auto;
+  max-width: 70rem;
+  margin-inline: auto;
+  border-top: 1px solid var(--portfolio-line);
+  content: "";
+  pointer-events: none;
+}
+
+#root section[id]:not(#home-section) {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 4rem);
+  background-color: var(--portfolio-paper);
+}
+
+#root #home-section {
+  background: radial-gradient(ellipse at 90% 8%, #deebe1, transparent 58%), var(--portfolio-paper);
+}
+
+#root #home-section .home-slider {
+  background: transparent;
+}
+
+#root #home-section .slider-item {
+  max-width: 80rem;
+}
+
+#root #home-section .slider-item > div {
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 6vw, 5rem) clamp(2.25rem, 5vw, 4rem);
+}
+
+#root #home-section .subheading {
+  color: var(--portfolio-accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#root #home-section h1 {
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+}
+
+#root #home-section h1 span {
+  color: inherit;
+}
+
+#root #home-section h1 + span {
+  color: var(--portfolio-muted);
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+}
+
+#root section[id]:not(#home-section) > .container {
+  max-width: 76rem;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+#root section[id]:not(#home-section) h1 {
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  line-height: 1.12;
+}
+
+#root section[id]:not(#home-section) h2 {
+  font-size: clamp(1.125rem, 2vw, 1.4rem);
+  line-height: 1.3;
+}
+
+#root section[id]:not(#home-section) :is(.shadow-md, .shadow-lg) {
+  border: 1px solid var(--portfolio-line);
+  box-shadow: var(--portfolio-shadow);
+}
+
+#root section[id]:not(#home-section) :is(.shadow-md, .shadow-lg):hover {
+  box-shadow: 0 15px 36px rgba(32, 44, 39, 0.11);
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+}
+
+#root #contact-section button[type="submit"] {
+  background-color: var(--portfolio-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root *, #root *::before, #root *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
