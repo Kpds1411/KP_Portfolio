@@ -1,30 +1,31 @@
-import PropTypes from "prop-types";
-import { navOptions, navTitle, colors, transition } from "../../constants";
-import { useState } from "react";
+import { navOptions, colors, transition } from "../../constants";
+import { useEffect, useState } from "react";
 
-const Navbar = ({ toggleTheme, isDarkMode }) => {
-  const { background, text, link, button, buttonHover } = isDarkMode
-    ? colors.dark
-    : colors.light;
+const Navbar = () => {
+  const { background, link, buttonHover } = colors.light;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const [activeSection, setActiveSection] = useState(() => window.location.hash || "#home-section");
+
+  useEffect(() => {
+    const syncSection = () => setActiveSection(window.location.hash || "#home-section");
+    window.addEventListener("hashchange", syncSection);
+    return () => window.removeEventListener("hashchange", syncSection);
+  }, []);
+
   return (
     <nav
-      className={`w-full h-20 flex items-center justify-between px-8 lg:px-20 py-4 border-b-2 sticky top-0 z-10 ${background} transition-all ${transition.duration}`}
+      aria-label="Main navigation"
+      className={`w-full h-20 flex items-center justify-center px-8 lg:px-20 py-4 border-b-2 sticky top-0 z-10 ${background} transition-all ${transition.duration}`}
     >
-      <div
-        className={`text-2xl font-bold ${text} transition-all ${transition.duration}`}
-      >
-        {navTitle}
-      </div>
-
       <ul
-        className={`lg:flex gap-x-5 ${
+        id="portfolio-nav-links"
+        className={`xl:flex gap-x-5 ${
           isMobileMenuOpen
             ? `flex flex-col fixed top-20 right-0 w-full p-8 z-20 transition-all transform duration-300 ease-in-out items-center justify-center ${background} `
             : "hidden"
-        } lg:flex lg:flex-row lg:gap-0 lg:items-center`}
+        } xl:flex xl:flex-row xl:gap-0 xl:items-center`}
       >
         {navOptions.map((option) => (
           <li
@@ -35,7 +36,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             <a
               href={option.href}
               className={`${link} ${transition.duration}`}
-              aria-label={option.title}
+              aria-current={activeSection === option.href ? "location" : undefined}
             >
               {option.title}
             </a>
@@ -43,42 +44,23 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         ))}
       </ul>
 
-      <button
-        onClick={toggleTheme}
-        className={`text-2xl p-2 border-none cursor-pointer transition-all ${transition.duration}`}
-        aria-label="Toggle dark mode"
-      >
-        <i
-          className={`!bg-transparent fas transition-all ${
-            transition.duration
-          } ${isDarkMode ? "fa-sun text-white" : "fa-moon text-black"} ${
-            isDarkMode ? button : buttonHover
-          }`}
-        ></i>
-      </button>
-
-      <div className="lg:hidden">
+      <div className="ml-auto xl:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`text-2xl p-2 border-none cursor-pointer transition-all ${transition.duration}`}
-          aria-label="Toggle mobile menu"
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="portfolio-nav-links"
         >
           <i
-            className={`!bg-transparent fas transition-all ${
-              isDarkMode ? "text-white" : "text-black"
-            } ${transition.duration} ${
+            className={`!bg-transparent fas transition-all text-black ${transition.duration} ${
               isMobileMenuOpen ? "fa-times" : "fa-bars"
-            } ${isDarkMode ? button : buttonHover}`}
+            } ${buttonHover}`}
           ></i>
         </button>
       </div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  toggleTheme: PropTypes.func.isRequired,
-  isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default Navbar;

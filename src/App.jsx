@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import {
   Navbar,
@@ -10,42 +9,18 @@ import {
   Achivements,
   Certifications,
   Education,
-  // Projects, // hidden for now
   Publications,
 } from "./component";
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDarkMode]);
+  const isDarkMode = false;
 
   return (
-    <div className={`transition-all ${isDarkMode ? "dark" : ""}`}>
-      <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+    <div className="transition-all">
+      <Navbar />
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} />
       <Experience isDarkMode={isDarkMode} />
-      {/* Projects hidden for now — uncomment to re-enable (also in header.js) */}
-      {/* <Projects isDarkMode={isDarkMode} /> */}
       <Certifications isDarkMode={isDarkMode} />
       <Achivements isDarkMode={isDarkMode} />
       <Publications isDarkMode={isDarkMode} />

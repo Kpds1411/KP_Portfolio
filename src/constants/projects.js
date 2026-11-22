@@ -1,43 +1,58 @@
-const projectsData = [
+export const projectsData = [
   {
-    key: "1",
-    title: "Data Migration and Reporting of Trading Data",
-    role: "Developer",
-    tech: ["SSIS", "SQL Server", "Power BI", "Power Apps"],
-    description: [
-      "Designed and implemented SSIS packages to extract data from an on-premises SQL Server and Excel files, supporting insert, update, and delete operations to keep databases in sync. Scheduled the packages using SQL Server Agent jobs.",
-      "Developed Power BI reports for a Dubai-based logistics and trading client using a data gateway, with Power Apps integration for real-time reporting.",
+    "title": "Power BI Reporting & Analytics Solution",
+    "tech": [
+      "Power BI",
+      "SQL Server",
+      "T-SQL",
+      "Stored Procedures",
+      "Data Warehousing",
+      "Data Modeling",
+      "Semantic Model",
+      "Power Automate",
+      "Incremental Refresh",
+      "Partition Management",
+      "Row-Level Security (RLS)",
+      "Power BI Embedded",
+      "REST API",
+      "ETL / Data Transformation"
     ],
-  },
-  {
-    key: "2",
-    title: "Email & Attachment Data Migration and Reporting",
-    role: "Mentor",
-    tech: ["Azure Data Factory", "CRM", "Power BI"],
-    description: [
-      "Designed an Azure Data Factory pipeline for an Australia-based investment client to migrate email data and attachments from the CRM, with dynamic date ranges and target entities.",
-      "Developed Power BI reports giving a complete overview of migrated emails and their attachments to track migration completeness.",
+    "overview": "Developed a centralized Power BI analytics solution consisting of 22 interactive reports built on a single, reusable semantic model. The solution integrates multiple data sources, implements SQL-based business transformations, automates incremental and historical partition refreshes, and delivers secure, user-specific analytics through an embedded business portal.",
+    "architecture": [
+      {
+        "title": "Data Integration & Transformation",
+        "body": "Data is extracted from Excel, SQL Server, and REST APIs using C# code developed by the client's development team. SQL Server Stored Procedures handle data cleaning, joins, calculations, and business transformations. The processed data is stored in a centralized SQL Server Data Warehouse."
+      },
+      {
+        "title": "Data Modeling & Reporting",
+        "body": "Designed a shared Power BI Semantic Model using Data Warehouse reporting tables, enabling consistent business logic and reusable measures across 22 Power BI reports. This centralized approach simplifies maintenance and ensures reporting consistency."
+      },
+      {
+        "title": "Automated Incremental Refresh & Partition Management",
+        "body": "Implemented two Power Automate-based refresh workflows:",
+        "details": [
+          [
+            "Regular Refresh",
+            "Refreshes the latest data through the incremental refresh process."
+          ],
+          [
+            "Historical Partition Refresh",
+            "SQL Stored Procedures identify historical partitions affected by data changes. Power Automate loops through the identified partitions and triggers selective refreshes, reducing unnecessary processing."
+          ]
+        ]
+      },
+      {
+        "title": "Embedded Analytics & Data Security",
+        "body": "Integrated 22 Power BI reports into a business portal, enabling centralized report access. Implemented Row-Level Security (RLS) using the logged-in user's PIN to restrict data visibility and ensure users only access authorized information."
+      }
     ],
-  },
-  {
-    key: "3",
-    title: "Analysis and Reporting of an IT Firm's PMS System",
-    role: "Mentor",
-    tech: ["Power BI", "CRM"],
-    description: [
-      "Designed Power BI reports across four modules: Skill Assessment, Project Planning, Billing, and Timesheets, integrating data from the CRM system.",
-      "Improved resource management and financial tracking through insights on capability gaps, utilization, revenue trends, and actual vs. billed hours.",
-    ],
-  },
-  {
-    key: "4",
-    title: "Healthcare Embedded Analytics",
-    role: "Developer",
-    tech: ["Power BI", "MySQL", "PostgreSQL", "RLS"],
-    description: [
-      "Developed Power BI reports for a US-based healthcare client from MySQL and PostgreSQL databases, with Row-Level Security, embedded into the client's portal for secure access.",
-    ],
-  },
+    "highlights": [
+      "22 Power BI reports powered by a centralized, reusable semantic model.",
+      "Automated incremental refresh using Power Automate.",
+      "Change-driven historical partition refresh using SQL Stored Procedures and Power Automate.",
+      "PIN-based Dynamic Row-Level Security for user-specific data access.",
+      "Embedded Power BI analytics within a business portal.",
+      "Centralized SQL Server Data Warehouse with reusable transformation logic."
+    ]
+  }
 ];
-
-export { projectsData };
