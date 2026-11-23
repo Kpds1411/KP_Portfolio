@@ -10,7 +10,7 @@ const Projects = ({ isDarkMode }) => {
   return (
     <section className={`pt-20 ${background} ${transition.duration}`} id="projects-section">
       <div className="container mx-auto px-4">
-        <h1 className={`mb-8 text-center text-4xl font-bold ${heading} ${transition.duration}`}>Key Projects</h1>
+        <h1 className={`mb-8 text-center text-4xl font-bold ${heading} ${transition.duration}`}>Projects</h1>
         <div className="mx-auto grid max-w-5xl gap-8">
           {projectsData.map((project, index) => (
             <article key={project.title} className={`space-y-8 rounded-xl p-5 shadow-md sm:p-8 ${cardBackground} ${text}`}>
