@@ -13,12 +13,15 @@ const Projects = ({ isDarkMode }) => {
         <div className="mx-auto grid max-w-5xl gap-8">
           {projectsData.map((project, index) => (
             <details key={project.title} className={`group rounded-xl p-5 shadow-md sm:p-8 ${cardBackground} ${text}`}>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center gap-3 [&::-webkit-details-marker]:hidden">
+                <span aria-hidden="true" className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-[#e3eee6] text-xl font-semibold leading-none text-[#174b39] group-hover:bg-[#d5e7da]">
+                  <span className="group-open:hidden">+</span>
+                  <span className="hidden group-open:inline">−</span>
+                </span>
                 <h2 className="flex items-baseline gap-3 text-3xl font-bold tracking-tight">
                   <span className="text-lg font-semibold tabular-nums opacity-75">{String(index + 1).padStart(2, "0")}.</span>
                   <span>{project.title}</span>
                 </h2>
-                <span aria-hidden="true" className="shrink-0 text-sm group-open:rotate-180">▾</span>
               </summary>
               <div className="mt-6 space-y-8">
                 <figure className="w-full">
