@@ -1,3 +1,6 @@
+import powerBiDiagram from "../assets/power-bi-architecture.png";
+import enterpriseDiagram from "../assets/enterprise-bi-architecture.jpeg";
+
 export const projectsData = [
   {
     "title": "Power BI Reporting & Analytics Solution",
@@ -53,6 +56,13 @@ export const projectsData = [
       "PIN-based Dynamic Row-Level Security for user-specific data access.",
       "Embedded Power BI analytics within a business portal.",
       "Centralized SQL Server Data Warehouse with reusable transformation logic."
-    ]
+    ],
+    "diagram": powerBiDiagram,
+    "diagramAlt": "Power BI solution architecture showing source integration, SQL Server, embedded reports, refresh, and row-level security."
+  },
+  {
+    "title": "Enterprise Data & BI Architecture",
+    "diagram": enterpriseDiagram,
+    "diagramAlt": "Architecture diagram showing REST API, Excel, and Snowflake data flowing through Microsoft Fabric and a data warehouse into embedded Power BI reports."
   }
 ];

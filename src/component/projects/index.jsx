@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { projectsData, colors, transition } from "../../constants";
-import architectureDiagram from "../../assets/power-bi-architecture.png";
 
 const Projects = ({ isDarkMode }) => {
   const { background, text, cardBackground, heading } = isDarkMode
@@ -19,47 +18,55 @@ const Projects = ({ isDarkMode }) => {
                 <span>{project.title}</span>
               </h2>
               <figure className="w-full">
-                <img src={architectureDiagram} alt="Power BI architecture from data sources and SQL Server transformation to a shared semantic model, embedded reports, automated refresh, and row-level security." className="block h-auto w-full" loading="lazy" />
+                <img src={project.diagram} alt={project.diagramAlt} className="block h-auto w-full" loading="lazy" />
               </figure>
-              <div className="space-y-7">
-                <div>
-                  <h3 className="mb-3 text-xl font-semibold">Key Skills &amp; Tools</h3>
-                  <ul className="flex flex-wrap gap-2">
-                    {project.tech.map((skill) => (
-                      <li key={skill} className="rounded-full bg-[#e3eee6] px-3 py-1 text-sm font-medium text-[#174b39]">
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-xl font-semibold">Project Overview</h3>
-                  <p className="leading-relaxed">{project.overview}</p>
-                </div>
-                <div>
-                  <h3 className="mb-3 text-xl font-semibold">Architecture Explanation</h3>
-                  <ol className="list-decimal space-y-4 pl-6 marker:font-semibold">
-                    {project.architecture.map(({ title, body, details }) => (
-                      <li key={title}>
-                        <h4 className="mb-1 font-semibold">{title}</h4>
-                        <p>{body}</p>
-                        {details && (
-                          <ul className="mt-2 list-disc space-y-2 pl-5">
-                            {details.map(([label, description]) => (
-                              <li key={label}><strong>{label}:</strong> {description}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-xl font-semibold">Key Technical Highlights</h3>
-                  <ul className="list-disc space-y-2 pl-6">
-                    {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-                  </ul>
-                </div>
+              <div className="space-y-7 empty:hidden">
+                {project.tech?.length > 0 && (
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold">Key Skills &amp; Tools</h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {project.tech.map((skill) => (
+                        <li key={skill} className="rounded-full bg-[#e3eee6] px-3 py-1 text-sm font-medium text-[#174b39]">
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {project.overview && (
+                  <div>
+                    <h3 className="mb-2 text-xl font-semibold">Project Overview</h3>
+                    <p className="leading-relaxed">{project.overview}</p>
+                  </div>
+                )}
+                {project.architecture?.length > 0 && (
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold">Architecture Explanation</h3>
+                    <ol className="list-decimal space-y-4 pl-6 marker:font-semibold">
+                      {project.architecture.map(({ title, body, details }) => (
+                        <li key={title}>
+                          <h4 className="mb-1 font-semibold">{title}</h4>
+                          <p>{body}</p>
+                          {details && (
+                            <ul className="mt-2 list-disc space-y-2 pl-5">
+                              {details.map(([label, description]) => (
+                                <li key={label}><strong>{label}:</strong> {description}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+                {project.highlights?.length > 0 && (
+                  <div>
+                    <h3 className="mb-2 text-xl font-semibold">Key Technical Highlights</h3>
+                    <ul className="list-disc space-y-2 pl-6">
+                      {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                    </ul>
+                  </div>
+                )}
               </div>
             </article>
           ))}
