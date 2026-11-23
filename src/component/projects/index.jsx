@@ -17,6 +17,7 @@ const Projects = ({ isDarkMode }) => {
                 <span className="text-lg font-semibold tabular-nums opacity-75">{String(index + 1).padStart(2, "0")}.</span>
                 <span>{project.title}</span>
               </h2>
+              {project.subtitle && <p className="text-sm font-medium">{project.subtitle}</p>}
               <figure className="w-full">
                 <img src={project.diagram} alt={project.diagramAlt} className="block h-auto w-full" loading="lazy" />
               </figure>
