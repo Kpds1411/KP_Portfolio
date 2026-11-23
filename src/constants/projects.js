@@ -67,23 +67,15 @@ export const projectsData = [
     "tech": [
       "Microsoft Fabric",
       "Fabric Notebooks",
-      "SQL Stored Procedures",
+      "MSSQL",
       "REST API (JSON)",
-      "Excel (.xlsx)",
       "Snowflake",
       "ETL Orchestration",
       "Data Parsing & Transformation",
-      "Staging Tables",
       "Data Warehousing",
-      "SQL MERGE / Upsert",
-      "Data Historization",
-      "Soft Deletes",
-      "Audit Columns",
       "Power BI",
-      "Semantic Modeling",
       "Embedded Analytics",
-      "Row-Level Security (RLS)",
-      "User Principal Name (UPN)"
+      "Row-Level Security (RLS)"
     ],
     "overview": "Built an enterprise data and business intelligence solution that consolidates REST API, Excel, and Snowflake data into curated warehouse tables for Power BI reporting. Microsoft Fabric orchestrates ingestion and SQL-based processing, while merge logic maintains current and historical records. Business reports share a Power BI semantic model and are embedded in a client portal with user-specific access controlled through RLS.",
     "architecture": [
