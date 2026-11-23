@@ -2,7 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
     "deploymentEnabled": {
-      "portfolio-refresh-review": false
+      "portfolio-refresh-review": false,
+      "portfolio-projects-review": false
     }
   }
 }

@@ -1,3 +1,6 @@
+import powerBiDiagram from "../assets/power-bi-architecture.png";
+import enterpriseDiagram from "../assets/enterprise-bi-architecture.jpeg";
+
 export const projectsData = [
   {
     "title": "Power BI Reporting & Analytics Solution",
@@ -53,6 +56,63 @@ export const projectsData = [
       "PIN-based Dynamic Row-Level Security for user-specific data access.",
       "Embedded Power BI analytics within a business portal.",
       "Centralized SQL Server Data Warehouse with reusable transformation logic."
+    ],
+    "diagram": powerBiDiagram,
+    "diagramAlt": "Power BI solution architecture showing source integration, SQL Server, embedded reports, refresh, and row-level security."
+  },
+  {
+    "title": "Enterprise Data & BI Architecture",
+    "diagram": enterpriseDiagram,
+    "diagramAlt": "Architecture diagram showing REST API, Excel, and Snowflake data flowing through Microsoft Fabric and a data warehouse into embedded Power BI reports.",
+    "tech": [
+      "Microsoft Fabric",
+      "Fabric Notebooks",
+      "MSSQL",
+      "REST API (JSON)",
+      "Snowflake",
+      "ETL Orchestration",
+      "Data Parsing & Transformation",
+      "Data Warehousing",
+      "Power BI",
+      "Embedded Analytics",
+      "Row-Level Security (RLS)"
+    ],
+    "overview": "Built an enterprise data and business intelligence solution that consolidates REST API, Excel, and Snowflake data into curated warehouse tables for Power BI reporting. Microsoft Fabric orchestrates ingestion and SQL-based processing, while merge logic maintains current and historical records. Business reports share a Power BI semantic model and are embedded in a client portal with user-specific access controlled through RLS.",
+    "architecture": [
+      {
+        "title": "Data Sources & Raw Ingestion",
+        "body": "Data originates from REST APIs returning JSON, Excel (.xlsx) files, and Snowflake (a source refreshed daily through truncate-and-load). Microsoft Fabric notebooks and stored procedures extract the data, call APIs, read files, and load raw responses into a raw response table. Run IDs and load timestamps support traceability."
+      },
+      {
+        "title": "Parsing & Business Transformation",
+        "body": "SQL stored procedures parse JSON into tabular structures, cleanse and standardize incoming records, apply business rules, and load transformed datasets into staging (STG) tables."
+      },
+      {
+        "title": "Merge, Historization & Data Warehouse",
+        "body": "A merge stored procedure identifies new and changed records and performs INSERT/UPDATE upserts into enterprise warehouse tables. The process handles deleted records through an IsDeleted soft-delete flag, retains historical as well as current data, and maintains audit columns such as load and update dates."
+      },
+      {
+        "title": "Semantic Model, Reports & Client Portal",
+        "body": "Power BI connects to the curated warehouse tables through a shared semantic model supporting multiple business reports, including operational, performance, and trend analysis. Reports are embedded in a client portal to provide a centralized, branded reporting experience."
+      },
+      {
+        "title": "Security & Access Control",
+        "body": "Power BI Row-Level Security (RLS) uses the user's User Principal Name (UPN) to restrict report data to the records they are authorized to view."
+      },
+      {
+        "title": "Orchestration & Refresh Strategy",
+        "body": "Microsoft Fabric orchestrates the extraction, raw loading, parsing, staging, and merge/upsert workflow. ETL runs daily using incremental or change-driven processing to handle new, updated, and deleted records while preserving historical data. Power BI reports use a separate scheduled daily full refresh, rather than incremental report refresh, to read the latest warehouse data."
+      }
+    ],
+    "highlights": [
+      "Unified API, Excel, and Snowflake ingestion through Microsoft Fabric.",
+      "Traceable raw data loading with run IDs and timestamps.",
+      "Reusable SQL stored procedures for parsing, cleansing, business logic, and staging.",
+      "Change-driven warehouse merges with upsert, soft-delete, and historization logic.",
+      "Curated current and historical warehouse tables with audit fields.",
+      "Shared Power BI semantic model serving multiple reports.",
+      "Embedded client-portal analytics with UPN-based RLS.",
+      "Daily incremental/change-driven ETL and separate daily full Power BI refresh."
     ]
   }
 ];

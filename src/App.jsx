@@ -4,6 +4,7 @@ import {
   HeroSection,
   About,
   Experience,
+  Projects,
   Contact,
   Footer,
   Achivements,
@@ -21,6 +22,7 @@ export default function App() {
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} />
       <Experience isDarkMode={isDarkMode} />
+      <Projects isDarkMode={isDarkMode} />
       <Certifications isDarkMode={isDarkMode} />
       <Achivements isDarkMode={isDarkMode} />
       <Publications isDarkMode={isDarkMode} />
