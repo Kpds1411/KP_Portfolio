@@ -12,7 +12,7 @@ const Projects = ({ isDarkMode }) => {
         <h1 className={`mb-8 text-center text-4xl font-bold ${heading} ${transition.duration}`}>Projects</h1>
         <div className="mx-auto grid max-w-5xl gap-8">
           {projectsData.map((project, index) => (
-            <details key={project.title} open={index === 0} className={`group rounded-xl p-5 shadow-md sm:p-8 ${cardBackground} ${text}`}>
+            <details key={project.title} className={`group rounded-xl p-5 shadow-md sm:p-8 ${cardBackground} ${text}`}>
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
                 <h2 className="flex items-baseline gap-3 text-3xl font-bold tracking-tight">
                   <span className="text-lg font-semibold tabular-nums opacity-75">{String(index + 1).padStart(2, "0")}.</span>
