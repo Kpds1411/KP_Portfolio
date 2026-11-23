@@ -24,7 +24,13 @@ const Projects = ({ isDarkMode }) => {
               <div className="space-y-7">
                 <div>
                   <h3 className="mb-3 text-xl font-semibold">Key Skills &amp; Tools</h3>
-                  <p>{project.tech.join(", ")}</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {project.tech.map((skill) => (
+                      <li key={skill} className="rounded-full bg-[#e3eee6] px-3 py-1 text-sm font-medium text-[#174b39]">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div>
                   <h3 className="mb-2 text-xl font-semibold">Project Overview</h3>
