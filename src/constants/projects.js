@@ -1,5 +1,5 @@
 import powerBiDiagram from "../assets/power-bi-architecture.png";
-import enterpriseDiagram from "../assets/enterprise-bi-architecture.jpeg";
+import enterpriseDiagram from "../assets/enterprise-bi-architecture.png";
 
 export const projectsData = [
   {
