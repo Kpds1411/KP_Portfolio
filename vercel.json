@@ -3,7 +3,8 @@
   "git": {
     "deploymentEnabled": {
       "portfolio-refresh-review": false,
-      "portfolio-projects-review": false
+      "portfolio-projects-review": false,
+      "portfolio-project-diagram-review": false
     }
   }
 }
