@@ -64,7 +64,6 @@ export const projectsData = [
     "title": "Enterprise Data & BI Architecture",
     "diagram": enterpriseDiagram,
     "diagramAlt": "Architecture diagram showing REST API, Excel, and Snowflake data flowing through Microsoft Fabric and a data warehouse into embedded Power BI reports.",
-    "subtitle": "API / Snowflake to Power BI | Historization, RLS & Client Portal",
     "tech": [
       "Microsoft Fabric",
       "Fabric Notebooks",
