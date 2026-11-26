@@ -4,7 +4,7 @@ import costAllocationDiagram from "../assets/Cost Allocation & Reporting Archite
 
 export const projectsData = [
   {
-    "title": "Power BI Reporting & Analytics Solution",
+    "title": "End-to-End Embedded Analytics Solution using Power BI & Power Automate",
     "tech": [
       "Power BI",
       "SQL Server",
