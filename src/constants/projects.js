@@ -122,42 +122,49 @@ export const projectsData = [
     "diagramAlt": "Excel and operational data flow through extraction, incremental staging, and SSIS cost allocation into production tables and Power BI reports with row-level security. Scheduled ETL includes audit logs and email alerts.",
     "tech": [
       "SQL Server Integration Services (SSIS)",
+      "SQL Server",
+      "T-SQL",
+      "ETL Development",
+      "Configuration-Driven Data Integration",
+      "Incremental Loading",
+      "Data Staging",
+      "Data Warehousing",
+      "Financial Cost Allocation",
       "Power BI",
-      "Microsoft Excel",
-      "ETL Orchestration",
-      "Incremental Loads & Upserts",
-      "Cost Allocation",
+      "SQL Views",
       "Row-Level Security (RLS)",
-      "ETL Audit Logging"
+      "Data Validation",
+      "Error Logging",
+      "Failure Notifications",
+      "Troubleshooting"
     ],
-    "overview": "Consolidated Excel inputs, timesheets, and operational database records into a scheduled SSIS pipeline. The pipeline stages new and changed records, applies cost allocation rules, and prepares production tables for secure business and operational reporting in Power BI.",
+    "overview": "Developed an end-to-end financial data integration and reporting solution that consolidates Excel inputs, operational databases, exchange rates and timesheet data. The solution uses SSIS to automate incremental data processing and business-specific cost allocation, stores processed data in a production database, and delivers secure Power BI reports. Error logging and automated notifications support reliable operations and efficient troubleshooting.",
     "architecture": [
       {
-        "title": "Configuration-Driven Extraction",
-        "body": "Configuration identifies the required inputs, including Excel files for access rules, business units, and rates, timesheet workbooks, and operational database records such as transactions and exchange rates. The pipeline extracts and standardizes these inputs before loading them."
+        "title": "Data Integration & Incremental Loading",
+        "body": "Configuration-driven extraction dynamically identifies the required source tables for each business unit and ledger. Incremental processing identifies inserted, updated and deleted records based on the last successful execution, avoiding unnecessary full data loads. Extracted data is transformed and loaded into staging tables."
       },
       {
-        "title": "Incremental Loads & Staging",
-        "body": "New and changed records are inserted or updated in staging tables, so the pipeline processes changes without reloading every source record."
+        "title": "Automated Cost Allocation",
+        "body": "SSIS processes staged financial and timesheet data using business-defined cost allocation rules. The workflow checks whether required timesheet records are available before performing allocation and sends an email notification when required data is missing."
       },
       {
-        "title": "Cost Allocation & Production Tables",
-        "body": "SSIS applies business rules and transformations to generate allocated costs and timesheet data. Production tables store the results alongside business data such as ledger, business-unit, and access-control records."
+        "title": "Production Database & Reporting",
+        "body": "Processed financial, allocated cost, timesheet and supporting business data are stored in production tables. SQL views prepare reporting datasets according to business requirements. Power BI reports consume these datasets, with Row-Level Security (RLS) supporting controlled data access."
       },
       {
-        "title": "Power BI Reporting & Security",
-        "body": "Power BI uses the production tables for cost reports and operational insights. Row-Level Security limits which records users can see based on their roles."
-      },
-      {
-        "title": "Scheduling, Audit Logs & Alerts",
-        "body": "Scheduled SSIS runs record errors, row counts, and execution details for troubleshooting. Email alerts flag data quality anomalies and notify operators of ETL failures with error details and a log reference."
+        "title": "Data Validation, Error Handling & Monitoring",
+        "body": "Business-defined validation checks identify missing or inconsistent data and trigger anomaly notifications to relevant users. Error logging captures ETL errors and execution details to simplify debugging and root-cause analysis. Automated failure email notifications alert the responsible team when SSIS execution fails."
       }
     ],
     "highlights": [
-      "Configuration-driven ingestion from Excel, timesheets, and operational databases.",
-      "Incremental upserts and reusable SSIS cost allocation rules.",
-      "Power BI cost and operational reporting protected by role-based RLS.",
-      "Scheduled processing with execution logs and email alerts for anomalies and failures."
+      "Configuration-driven dynamic source table selection by business unit and ledger.",
+      "Incremental processing with insert, update and delete detection.",
+      "Automated financial cost allocation using SSIS and timesheet data.",
+      "Production database and reusable SQL reporting views.",
+      "Business-rule-based data validation and anomaly email alerts.",
+      "Error logging and automated ETL failure notifications for easier troubleshooting.",
+      "Secure Power BI reporting using Row-Level Security."
     ]
   }
 ];
