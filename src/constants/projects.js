@@ -62,7 +62,7 @@ export const projectsData = [
     "diagramAlt": "Power BI solution architecture showing source integration, SQL Server, embedded reports, refresh, and row-level security."
   },
   {
-    "title": "Enterprise Data & BI Architecture",
+    "title": "End-to-End Embedded Analytics Solution using Microsoft Fabric",
     "diagram": enterpriseDiagram,
     "diagramAlt": "Architecture diagram showing REST API, Excel, and Snowflake data flowing through Microsoft Fabric and a data warehouse into embedded Power BI reports.",
     "tech": [
