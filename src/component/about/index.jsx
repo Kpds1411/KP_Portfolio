@@ -19,11 +19,6 @@ const About = ({ isDarkMode }) => {
     >
       <div className="container mx-auto px-4">
         <div className={`mx-auto max-w-4xl ${text} ${transition.duration}`}>
-          <h1
-            className={`mb-8 text-center text-4xl font-bold ${heading} ${transition.duration}`}
-          >
-            About
-          </h1>
           <div className="mb-8 flex flex-col items-center">
             <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-white bg-gray-100 shadow-lg ring-1 ring-gray-200">
               <img
@@ -44,6 +39,11 @@ const About = ({ isDarkMode }) => {
             </div>
           </div>
 
+          <h1
+            className={`mb-4 text-center text-4xl font-bold ${heading} ${transition.duration}`}
+          >
+            About
+          </h1>
           <div className="mb-8">
             <p className={`text-lg ${text} ${transition.duration}`}>
               {aboutContent.description}
