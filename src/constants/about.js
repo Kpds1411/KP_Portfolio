@@ -4,7 +4,6 @@ const aboutContent = {
     { label: "Name", value: "Keyur Patel" },
     { label: "Job Role", value: "Senior Data Analytics Engineer" },
     { label: "Experience", value: "4+ Years" },
-    { label: "Address", value: "Bharuch, Gujarat, India (Currently in Surat)" },
   ],
   additionalInfo: [
     { label: "Profile", value: "Data Analytics" },
