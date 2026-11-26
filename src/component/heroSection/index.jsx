@@ -27,7 +27,7 @@ const HeroSection = ({ isDarkMode }) => {
           <span className="block">{typoGraphyContent[0]}</span>
         </div>
 
-        <div className="relative isolate self-start justify-self-end rounded-[32%_32%_24%_24%] bg-gradient-to-br from-[#eaf3ea] to-[#8ab49c] p-1.5 shadow-lg ring-1 ring-[#22634e]/20 sm:p-2 md:row-span-2">
+        <div className="self-start justify-self-end p-1.5 sm:p-2 md:row-span-2">
           <img
             src={heroProfileImage}
             alt={ownerName}
