@@ -1,5 +1,6 @@
 import powerBiDiagram from "../assets/power-bi-architecture.png";
 import enterpriseDiagram from "../assets/enterprise-bi-architecture.png";
+import costAllocationDiagram from "../assets/cost-allocation-architecture.svg";
 
 export const projectsData = [
   {
@@ -113,6 +114,50 @@ export const projectsData = [
       "Shared Power BI semantic model serving multiple reports.",
       "Embedded client-portal analytics with UPN-based RLS.",
       "Daily incremental/change-driven ETL and separate daily full Power BI refresh."
+    ]
+  },
+  {
+    "title": "Cost Allocation & Reporting Solution",
+    "diagram": costAllocationDiagram,
+    "diagramAlt": "Excel and operational data flow through extraction, incremental staging, and SSIS cost allocation into production tables and Power BI reports with row-level security. Scheduled ETL includes audit logs and email alerts.",
+    "tech": [
+      "SQL Server Integration Services (SSIS)",
+      "Power BI",
+      "Microsoft Excel",
+      "ETL Orchestration",
+      "Incremental Loads & Upserts",
+      "Cost Allocation",
+      "Row-Level Security (RLS)",
+      "ETL Audit Logging"
+    ],
+    "overview": "Consolidated Excel inputs, timesheets, and operational database records into a scheduled SSIS pipeline. The pipeline stages new and changed records, applies cost allocation rules, and prepares production tables for secure business and operational reporting in Power BI.",
+    "architecture": [
+      {
+        "title": "Configuration-Driven Extraction",
+        "body": "Configuration identifies the required inputs, including Excel files for access rules, business units, and rates, timesheet workbooks, and operational database records such as transactions and exchange rates. The pipeline extracts and standardizes these inputs before loading them."
+      },
+      {
+        "title": "Incremental Loads & Staging",
+        "body": "New and changed records are inserted or updated in staging tables, so the pipeline processes changes without reloading every source record."
+      },
+      {
+        "title": "Cost Allocation & Production Tables",
+        "body": "SSIS applies business rules and transformations to generate allocated costs and timesheet data. Production tables store the results alongside business data such as ledger, business-unit, and access-control records."
+      },
+      {
+        "title": "Power BI Reporting & Security",
+        "body": "Power BI uses the production tables for cost reports and operational insights. Row-Level Security limits which records users can see based on their roles."
+      },
+      {
+        "title": "Scheduling, Audit Logs & Alerts",
+        "body": "Scheduled SSIS runs record errors, row counts, and execution details for troubleshooting. Email alerts flag data quality anomalies and notify operators of ETL failures with error details and a log reference."
+      }
+    ],
+    "highlights": [
+      "Configuration-driven ingestion from Excel, timesheets, and operational databases.",
+      "Incremental upserts and reusable SSIS cost allocation rules.",
+      "Power BI cost and operational reporting protected by role-based RLS.",
+      "Scheduled processing with execution logs and email alerts for anomalies and failures."
     ]
   }
 ];
