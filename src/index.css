@@ -118,15 +118,7 @@ body {
   background: radial-gradient(ellipse at 90% 8%, #deebe1, transparent 58%), var(--portfolio-paper);
 }
 
-#root #home-section .home-slider {
-  background: transparent;
-}
-
-#root #home-section .slider-item {
-  max-width: 80rem;
-}
-
-#root #home-section .slider-item > div {
+#root #home-section .hero-content {
   padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 6vw, 5rem) clamp(2.25rem, 5vw, 4rem);
 }
 

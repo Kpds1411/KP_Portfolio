@@ -10,7 +10,6 @@ import {
 
 import {
   aboutContent,
-  profileImage as aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
   resume,
@@ -72,7 +71,6 @@ export {
   currentRole,
   heroProfileImage,
   aboutContent,
-  aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
   resume,

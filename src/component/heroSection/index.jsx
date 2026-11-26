@@ -5,6 +5,7 @@ import {
   typoGraphyContent,
   colors,
   transition,
+  heroProfileImage,
   heroBadges,
   heroTools,
 } from "../../constants";
@@ -17,43 +18,48 @@ const HeroSection = ({ isDarkMode }) => {
       id="home-section"
       className={`hero bg-cover bg-center relative ${background} transition-all ${transition.duration}`}
     >
-      <div
-        className={`home-slider h-full flex items-center justify-center ${background} transition-all ${transition.duration}`}
-      >
-        <div className="slider-item w-full h-full flex flex-col md:flex-row">
-          <div className="w-full flex flex-col justify-center p-10 md:p-20">
-            <div className={`${text} transition-all ${transition.duration}`}>
-              <span className="subheading text-2xl">{greetingMessage}</span>
-              <h1
-                className={`text-4xl md:text-6xl mb-4 mt-3 font-bold ${heading}`}
-              >
-                <span className={`${text}`}>{ownerName}</span>
-              </h1>
-              <span className="block text-2xl md:text-4xl">{typoGraphyContent[0]}</span>
-              <div className="grid grid-cols-4 gap-3 md:gap-4 mt-6 max-w-md">
-                {heroBadges.map((badge) => (
-                  <img
-                    key={badge.key}
-                    src={badge.image}
-                    alt={badge.title}
-                    title={badge.title}
-                    className="w-full aspect-square object-contain rounded-lg"
-                  />
-                ))}
-              </div>
-              <div className="flex items-center gap-2 md:gap-3 mt-6 max-w-xl bg-white rounded-lg px-3 py-2 shadow-sm">
-                {heroTools.map((tool) => (
-                  <img
-                    key={tool.key}
-                    src={tool.image}
-                    alt={tool.title}
-                    title={tool.title}
-                    style={{ flex: `${tool.ratio} 1 0%` }}
-                    className="min-w-0 h-auto object-contain"
-                  />
-                ))}
-              </div>
-            </div>
+      <div className={`hero-content mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-6 md:items-start md:gap-x-12 ${text} ${transition.duration}`}>
+        <div>
+          <span className="subheading">{greetingMessage}</span>
+          <h1 className={`mb-3 mt-3 font-bold ${heading}`}>
+            <span>{ownerName}</span>
+          </h1>
+          <span className="block">{typoGraphyContent[0]}</span>
+        </div>
+
+        <div className="relative isolate self-start justify-self-end rounded-[32%_32%_24%_24%] bg-gradient-to-br from-[#eaf3ea] to-[#8ab49c] p-1.5 shadow-lg ring-1 ring-[#22634e]/20 sm:p-2 md:row-span-2">
+          <img
+            src={heroProfileImage}
+            alt={ownerName}
+            width="718"
+            height="804"
+            className="aspect-[4/5] w-24 rounded-[30%_30%_22%_22%] bg-[#f5f8f2] object-cover object-top sm:w-36 md:w-56 lg:w-64"
+          />
+        </div>
+
+        <div className="col-span-2 min-w-0 md:col-span-1">
+          <div className="grid max-w-md grid-cols-4 gap-3 md:gap-4">
+            {heroBadges.map((badge) => (
+              <img
+                key={badge.key}
+                src={badge.image}
+                alt={badge.title}
+                title={badge.title}
+                className="aspect-square w-full rounded-lg object-contain"
+              />
+            ))}
+          </div>
+          <div className="mt-6 flex max-w-xl items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm md:gap-3">
+            {heroTools.map((tool) => (
+              <img
+                key={tool.key}
+                src={tool.image}
+                alt={tool.title}
+                title={tool.title}
+                style={{ flex: `${tool.ratio} 1 0%` }}
+                className="h-auto min-w-0 object-contain"
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import {
   projectsCompleted,
   colors,
   transition,
-  aboutProfileImage,
 } from "../../constants";
 import { buttonsData } from "../../constants/about";
 
@@ -19,14 +18,6 @@ const About = ({ isDarkMode }) => {
     >
       <div className="container mx-auto px-4">
         <div className={`mx-auto max-w-4xl ${text} ${transition.duration}`}>
-          <div className="mx-auto mb-8 h-40 w-40 overflow-hidden rounded-full border-4 border-white bg-gray-100 shadow-lg ring-1 ring-gray-200">
-            <img
-              src={aboutProfileImage}
-              className="h-full w-full object-cover object-top"
-              alt="Keyur Patel"
-            />
-          </div>
-
           <h1
             className={`mb-4 text-center text-4xl font-bold ${heading} ${transition.duration}`}
           >

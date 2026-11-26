@@ -34,8 +34,6 @@ const aboutContent = {
   ],
 };
 
-import profileImage from "../assets/profile.png";
-
 const projectsCompleted = 15;
 
 const linkedinUrl =
@@ -62,7 +60,6 @@ const buttonsData = [
 
 export {
   aboutContent,
-  profileImage,
   projectsCompleted,
   linkedinUrl,
   resume,
