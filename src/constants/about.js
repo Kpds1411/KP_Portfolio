@@ -39,13 +39,6 @@ const aboutContent = {
   ],
 };
 
-const skills = [
-  { name: "Microsoft SQL Server", level: "95%" },
-  { name: "Microsoft Power BI", level: "95%" },
-  { name: "Microsoft SQL Server Integration Services", level: "85%" },
-  { name: "Microsoft Fabric", level: "80%" },
-];
-
 import profileImage from "../assets/profile.png";
 
 const projectsCompleted = 15;
@@ -74,7 +67,6 @@ const buttonsData = [
 
 export {
   aboutContent,
-  skills,
   profileImage,
   projectsCompleted,
   linkedinUrl,

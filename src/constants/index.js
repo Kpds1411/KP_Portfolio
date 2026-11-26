@@ -10,7 +10,6 @@ import {
 
 import {
   aboutContent,
-  skills,
   profileImage as aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
@@ -38,7 +37,6 @@ const darkColors = {
   buttonHover: "hover:bg-blue-700",
   cardBackground: "bg-gray-800",
   cardText: "text-white",
-  skillProgressColor: "bg-green-500",
   inputBorder: "border-gray-100",
 };
 
@@ -51,7 +49,6 @@ const lightColors = {
   buttonHover: "hover:bg-blue-700",
   cardBackground: "bg-white",
   cardText: "text-gray-800",
-  skillProgressColor: "bg-yellow-500",
   inputBorder: "border-black",
 };
 
@@ -75,7 +72,6 @@ export {
   currentRole,
   heroProfileImage,
   aboutContent,
-  skills,
   aboutProfileImage,
   projectsCompleted,
   linkedinUrl,
