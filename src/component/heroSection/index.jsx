@@ -27,13 +27,13 @@ const HeroSection = ({ isDarkMode }) => {
           <span className="block">{typoGraphyContent[0]}</span>
         </div>
 
-        <div className="self-start justify-self-end p-1.5 sm:p-2 md:row-span-2">
+        <div className="self-start justify-self-end p-1.5 sm:p-2 md:row-span-2 md:self-end md:pb-0">
           <img
             src={heroProfileImage}
             alt={ownerName}
             width="718"
             height="804"
-            className="aspect-[4/5] w-24 object-contain object-right-top sm:w-36 md:w-56 lg:w-64"
+            className="h-auto w-24 sm:w-36 md:w-64 lg:w-72"
           />
         </div>
 
