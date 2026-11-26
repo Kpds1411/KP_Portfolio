@@ -117,7 +117,7 @@ export const projectsData = [
     ]
   },
   {
-    "title": "Cost Allocation & Reporting Solution",
+    "title": "End-to-End Embedded Analytics Solution using SSIS & Power BI",
     "diagram": costAllocationDiagram,
     "diagramAlt": "Excel and operational data flow through extraction, incremental staging, and SSIS cost allocation into production tables and Power BI reports with row-level security. Scheduled ETL includes audit logs and email alerts.",
     "tech": [
