@@ -1,6 +1,6 @@
 import powerBiDiagram from "../assets/power-bi-architecture.png";
 import enterpriseDiagram from "../assets/enterprise-bi-architecture.png";
-import costAllocationDiagram from "../assets/cost-allocation-architecture.svg";
+import costAllocationDiagram from "../assets/Cost Allocation & Reporting Architecture.png";
 
 export const projectsData = [
   {
