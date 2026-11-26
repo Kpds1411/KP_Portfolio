@@ -33,7 +33,7 @@ const HeroSection = ({ isDarkMode }) => {
             alt={ownerName}
             width="718"
             height="804"
-            className="aspect-[4/5] w-24 rounded-[30%_30%_22%_22%] bg-[#f5f8f2] object-cover object-top sm:w-36 md:w-56 lg:w-64"
+            className="aspect-[4/5] w-24 object-contain object-right-top sm:w-36 md:w-56 lg:w-64"
           />
         </div>
 
