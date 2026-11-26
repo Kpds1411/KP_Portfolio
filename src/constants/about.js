@@ -1,10 +1,5 @@
 const aboutContent = {
   description: `As a Senior Data Analytics Engineer at Inkey IT Solutions Pvt. Ltd., Keyur specializes in unlocking the potential of data for business growth. He leverages advanced analytics and visualization techniques to empower organizations with actionable insights. Keyur has good knowledge and experience in working with ETL technologies like Microsoft Fabric, ADF and SSIS, as well as version control systems like GitHub and Azure DevOps. He has also conducted informative sessions on these topics in his organization. He is well-versed in Fabric, a low-code development platform that enables rapid application development. He has written several technical blogs and contributed to the open-source community of Power BI and Fabric. Keyur is passionate about harnessing the power of data and learning new technologies.`,
-  personalInfo: [
-    { label: "Name", value: "Keyur Patel" },
-    { label: "Job Role", value: "Senior Data Analytics Engineer" },
-    { label: "Experience", value: "4+ Years" },
-  ],
   additionalInfo: [
     { label: "Profile", value: "Data Analytics" },
     {

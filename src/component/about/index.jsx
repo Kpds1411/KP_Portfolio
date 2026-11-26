@@ -19,24 +19,12 @@ const About = ({ isDarkMode }) => {
     >
       <div className="container mx-auto px-4">
         <div className={`mx-auto max-w-4xl ${text} ${transition.duration}`}>
-          <div className="mb-8 flex flex-col items-center">
-            <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-white bg-gray-100 shadow-lg ring-1 ring-gray-200">
-              <img
-                src={aboutProfileImage}
-                className="w-full h-full object-cover object-top"
-                alt="Profile"
-              />
-            </div>
-            <div
-              className={`text-center ${text} transition-all ${transition.duration}`}
-            >
-              {aboutContent.personalInfo.map((item, index) => (
-                <p key={index} className="text-lg mb-2">
-                  <span className="font-semibold">{item.label}:</span>{" "}
-                  {item.value}
-                </p>
-              ))}
-            </div>
+          <div className="mx-auto mb-8 h-40 w-40 overflow-hidden rounded-full border-4 border-white bg-gray-100 shadow-lg ring-1 ring-gray-200">
+            <img
+              src={aboutProfileImage}
+              className="h-full w-full object-cover object-top"
+              alt="Keyur Patel"
+            />
           </div>
 
           <h1
