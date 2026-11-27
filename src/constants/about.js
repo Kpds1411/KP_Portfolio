@@ -39,7 +39,7 @@ const projectsCompleted = 15;
 const linkedinUrl =
   "https://www.linkedin.com/in/keyurpatel1761?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRDzQJXKLT7WAA%2BFqW15eKw%3D%3D";
 
-import resume from "../assets/KeyurPatel_CV.pdf";
+import resume from "../assets/KeyurPatel_CV.docx?url";
 
 const cvUrl = resume;
 
@@ -54,7 +54,7 @@ const buttonsData = [
     key: "2",
     buttonText: "Download CV",
     url: cvUrl,
-    download: true,
+    download: "KeyurPatel_CV.docx",
   },
 ];
 

@@ -54,6 +54,7 @@ const About = ({ isDarkMode }) => {
                 <a
                   key={res.key}
                   href={res.url}
+                  download={res.download || undefined}
                   className={`inline-block px-6 py-3 text-lg font-semibold text-white  ${
                     colors.isDarkMode
                       ? colors.dark.button
